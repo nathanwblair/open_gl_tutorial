@@ -7,40 +7,13 @@
 #include "glm/gtx/quaternion.hpp"
 #include "glm/ext.hpp"
 #include "Gizmos.h"
+#include "FlyCamera.h"
 
-class Planet
-{
-	glm::mat4 * transform;
-	glm::vec4 * color;
-	float distanceFromSun;
-	float size;
-	float deltaRotation;
+#include "Planet.h"
 
-public:
+void TestPlanet();
 
-	Planet(glm::vec3 _position=glm::vec3(0), glm::vec4 _color=glm::vec4(0), float _distanceFromSun = 3.0f, float _size = 0.5f, float _deltaRotation = 0.01f)
-	{
-		position = new glm::vec3(_position);
-		color = new glm::vec4(_color);
-
-		distanceFromSun = _distanceFromSun;
-		size = _size;
-		deltaRotation = _deltaRotation;
-	}
-
-	~Planet()
-	{
-		delete position;
-		delete color;
-	}
-
-	void Draw()
-	{
-		*position = glm::rotate(*position, deltaRotation, glm::vec3(0));
-
-		Gizmos::addSphere(*position, size, 25, 25, *color);
-	}
-};
+FlyCamera * GetCamera(GLFWwindow * window = nullptr);
 
 int main()
 {
@@ -68,13 +41,13 @@ int main()
 
 	Gizmos::create();
 
-	auto view = glm::lookAt(glm::vec3(10, 10, 10), glm::vec3(0), glm::vec3(0, 1, 0));
-	auto projection = glm::perspective(glm::pi<float>() * 0.25f,
-		16.0f / 9.0f, 0.1f, 1000.0f);
+	float prevTime = 0.0f;
+	float currTime = NULL;
+	float deltaTime = NULL;
 
 	glClearColor(0.25f, 0.25f, 0.25f, 1);
 
-	auto earth = new Planet();
+	GetCamera(window)->SetSpeed(10.0f);
 
 	while ( (glfwWindowShouldClose(window) == false)
 		&& (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS))
@@ -84,6 +57,11 @@ int main()
 
 		Gizmos::clear();
 
+		currTime = glfwGetTime();
+		deltaTime = currTime - prevTime;
+		prevTime = currTime;
+
+		TestPlanet();
 		Gizmos::addTransform(glm::mat4(1));
 
 		glm::vec4 white(1);
@@ -112,12 +90,13 @@ int main()
 				color);	
 
 
-			Gizmos::addSphere(glm::vec3(0), 2.0f, 10, 10, yellow);
+			//Gizmos::addSphere(glm::vec3(0), 2.0f, 10, 10, yellow);
 
 			
 		}
 
-		Gizmos::draw(projection * view);
+		GetCamera()->Update(deltaTime);
+		Gizmos::draw(GetCamera()->GetProjectionView());
 		
 		glfwSwapBuffers(window);
 		glfwPollEvents();
@@ -130,4 +109,37 @@ int main()
 	glfwDestroyWindow(window);
 	glfwTerminate();
 	return 0;
+}
+
+
+void TestPlanet()
+{
+	glm::vec4 yellow(255.0f, 255.0f, 0, 1);
+
+	static Planet * sun = new Planet(nullptr, 0.0f, 2, yellow, 0);
+	static Planet * planet = new Planet(sun, 5);
+	static Planet * planet2 = new Planet(planet, 10.0f);
+
+	sun->Update();
+	sun->Draw();
+	planet->Update();
+	planet->Draw();
+	planet2->Update();
+	planet2->Draw();
+}
+
+
+FlyCamera * GetCamera(GLFWwindow * window)
+{
+	static FlyCamera * flyCamera = nullptr;
+
+	if (flyCamera == nullptr)
+	{
+		flyCamera = new FlyCamera(window);
+
+		flyCamera->SetLookAt(glm::vec3(10, 10, 10), glm::vec3(0));
+		flyCamera->SetPerspective(glm::pi<float>() * 0.25f, 16 / 9.0f, 0.1f, 1000.0f);
+	}
+
+	return flyCamera;
 }
