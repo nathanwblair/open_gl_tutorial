@@ -20,7 +20,7 @@ public:
 	vec3 scale;
 	Quaternion rotation;
    
-	Transform(vec3 _position = vec3(0), vec3 _scale = vec3(0), quat _rotation = quat(0, 0, 0, 0))
+	Transform(vec3 _position = vec3(0), vec3 _scale = vec3(0), Quaternion _rotation = vec3(0, 0, 0))
 	{
 		position = _position;
 		scale = _scale;
@@ -30,12 +30,7 @@ public:
 
 	mat4 GetTransform()
 	{
-		return glm::scale(scale) * glm::mat4_cast(rotation) * glm::translate(position);
-	}
-
-	mat4 ()
-	{
-		return glm::eulerAngles(rotation) * glm::pi<float>() / 180.f;
+		return glm::scale(scale) * glm::mat4_cast(rotation.quaternion) * glm::translate(position);
 	}
 };
 
