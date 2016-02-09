@@ -148,6 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\CameraApplication.cpp" />
     <ClCompile Include="src\Property.cpp" />
     <ClCompile Include="src\Node.cpp" />
     <ClCompile Include="src\Quaternion.cpp" />
@@ -162,8 +163,12 @@
     <ClCompile Include="src\Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\CameraApplication.h" />
     <ClInclude Include="src\BaseModifier.h" />
+    <ClInclude Include="src\Grid.h" />
+    <ClInclude Include="src\GridApplication.h" />
     <ClInclude Include="src\Modifier.h" />
+    <ClInclude Include="src\Planet.h" />
     <ClInclude Include="src\Property.h" />
     <ClInclude Include="src\BaseProperty.h" />
     <ClInclude Include="src\Node.h" />
@@ -172,7 +177,7 @@
     <ClInclude Include="src\Application.h" />
     <ClInclude Include="src\FlyCamera.h" />
     <ClInclude Include="src\Camera.h" />
-    <ClInclude Include="src\Planet.h" />
+    <ClInclude Include="src\Model.h" />
     <ClInclude Include="src\Gizmos.h" />
     <ClInclude Include="src\gl_core_4_4.h" />
     <ClInclude Include="src\Transform.h" />

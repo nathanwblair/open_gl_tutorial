@@ -1,5 +1,6 @@
-#include "GLFW/glfw3.h"
 #include "FlyCamera.h"
+
+#include "GLFW/glfw3.h"
 
 
 FlyCamera::FlyCamera(GLFWwindow * _window)

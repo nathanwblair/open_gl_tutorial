@@ -8,6 +8,7 @@
 #include "glm/ext.hpp"
 #include "Gizmos.h"
 
+
 class Planet
 {
 	Planet * parent;
@@ -21,7 +22,7 @@ public:
 	float rotationSpeed;
 	glm::vec3 * position;
 
-	Planet(Planet * _parent = nullptr, float _distanceFromSun = 3.0f, float _size = 0.5f, glm::vec4 _color = glm::vec4(0), float _rotationSpeed = 0.5f)
+	Planet(Planet * _parent=nullptr, float _distanceFromSun=3.0f, float _size=0.5f, glm::vec4 _color = glm::vec4(0), float _rotationSpeed=0.5f)
 	{
 		rotationSpeed = _rotationSpeed;
 		position = new glm::vec3(1);

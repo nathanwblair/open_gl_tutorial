@@ -1,6 +1,7 @@
 #pragma once
-#include "GLFW/glfw3.h"
 #include "Camera.h"
+
+struct GLFWwindow;
 
 class FlyCamera : public Camera
 {
