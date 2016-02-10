@@ -167,6 +167,7 @@
     <ClInclude Include="src\BaseModifier.h" />
     <ClInclude Include="src\Grid.h" />
     <ClInclude Include="src\GridApplication.h" />
+    <ClInclude Include="src\Utils.h" />
     <ClInclude Include="src\Modifier.h" />
     <ClInclude Include="src\Planet.h" />
     <ClInclude Include="src\Property.h" />

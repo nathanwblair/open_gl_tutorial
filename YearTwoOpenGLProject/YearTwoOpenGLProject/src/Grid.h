@@ -1,12 +1,12 @@
 #pragma once
-#define GLM_SWIZZLE_XYZW 
-#include "gl_core_4_4.h"
-#include "GLFW/glfw3.h"
+#include "Utils.h"
 #include "glm/glm.hpp"
 #include "glm/trigonometric.hpp"
 #include "glm/gtx/quaternion.hpp"
 #include "glm/ext.hpp"
 #include "Gizmos.h"
+
+#include "GridApplication.h"
 
 using glm::vec4;
 using glm::vec3;
@@ -21,6 +21,7 @@ struct Vertex {
 
 class Grid
 {
+public:
 	Grid()
 	{
 
@@ -28,7 +29,7 @@ class Grid
 
 	void GenerateGrid(uint rows, uint columns)
 	{
-		Vertex * AOVerticies = new Vertex[rows * columns];
+		Vertex * AO_Verticies = new Vertex[rows * columns];
 
 		for (uint row = 0; row < rows; row++)
 		{
@@ -43,15 +44,56 @@ class Grid
 
 				auto index = row * columns + column;
 
-				AOVerticies[index].position = newPosition;
-				AOVerticies[index].color = vec4(newColor, 1);
+				AO_Verticies[index].position = newPosition;
+				AO_Verticies[index].color = vec4(newColor, 1);
 			}
 		}
 
-		glGenBuffers(1, &m_VBO);
+		auto AUI_Indicies = new uint[(rows - 1) * (columns - 1) * 6];
+
+		uint index = 0;
+		for (uint row = 0; row < rows; row++)
+		{
+			for (uint column = 0; column < columns; columns++)
+			{
+				// Triangle 1
+				AUI_Indicies[index++] = row * columns + column;
+				AUI_Indicies[index++] = (row + 1) * columns + column;
+				AUI_Indicies[index++] = (row + 1) * columns + (column + 1);
+
+				// Triangle 2
+				AUI_Indicies[index++] = row * columns + column;
+				AUI_Indicies[index++] = (row + 1) * columns + (column + 1);
+				AUI_Indicies[index++] = row * columns + (column + 1);
+			}
+		}
 
 
-		delete[] AOVerticies;
+		auto application = (GridApplication*)GetApplication();
+
+		// Generate VBO & IBO
+		glGenBuffers(1, &(application->VBO));
+		glGenBuffers(1, &application->IBO);
+
+		glGenVertexArrays(1, &application->VAO);
+
+		glBindBuffer(GL_ARRAY_BUFFER, application->VBO);
+		glBufferData(GL_ARRAY_BUFFER, (rows * columns) * sizeof(Vertex), AO_Verticies, GL_STATIC_DRAW);
+
+		glEnableVertexAttribArray(0);
+		glEnableVertexAttribArray(1);
+
+		glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
+		glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)(sizeof(vec4)));
+
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, application->IBO);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, (rows - 1) * (columns - 1) * 6 * sizeof(uint), AUI_Indicies, GL_STATIC_DRAW);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
+
+		delete[] AO_Verticies;
 	}
 
 	void Draw()
