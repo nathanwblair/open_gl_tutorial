@@ -1,9 +1,6 @@
-[submodule "YearTwoOpenGLProject/deps/glm"]
-	path = deps/glm
-	url = https://github.com/g-truc/glm
 [submodule "YearTwoOpenGLProject/deps/glfw"]
-	path = deps/glfw
-	url = https://github.com/glfw/glfw
-[submodule "YearTwoOpenGLProject/deps/tinyobjloader"]
-	path = deps/tinyobjloader
-	url = https://github.com/syoyo/tinyobjloader.git
+	path = YearTwoOpenGLProject/deps/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "YearTwoOpenGlProject/deps/glm"]
+	path = YearTwoOpenGlProject/deps/glm
+	url = https://github.com/g-truc/glm.git
