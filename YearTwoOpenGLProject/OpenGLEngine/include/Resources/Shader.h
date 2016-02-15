@@ -1,75 +1,78 @@
 #pragma once
 
-#include <fsteram>
-#include <sstream>
 #include <string>
+#include <typeinfo>
+#include <map>
+
+#include "Utils.h"
+#include "TextAsset.h"
 
 using std::string;
+using std::map;
 
-class Shader
+class Shader :
+        public TextAsset
 {
     uint shaderID;
     
     Shader() 
-        : shaderID(-1)
+        : shaderID(0)
     {
         
     }
-    
+
+
     template <typename type>
     void SetUniform(string name, type value)
     {
-        string name = typeid(name).name();
+        string typeName = NAME(type);
         
-        if (name == "unsigned int")
+        if (typeName == NAME(uint))
         {
-            
+            glUniform1ui(GetUniformLocation(name), value);
         }
-        else if (name == "int")
+        else if (typeName == NAME(int))
         {
-            
+            glUniform1i(GetUniformLocation(name), value);
         }
-        else if (name == "float")
+        else if (typeName == NAME(float))
         {
-            
+            glUniform1f(GetUniformLocation(name), value);
         }
-        else if (name == "mat4")
+        else if (typeName == NAME(glm::mat4))
         {
-            
-            
-            glUniformMatrix4fv(m_shaderUniforms[SupportedShaderUniforms::Projection], 1, GL_FALSE, glm::value_ptr(mat));
+            glUniformMatrix4fv(GetUniformLocation(name), 1, GL_FALSE, glm::value_ptr(value));
         }
-        else if (name == "vec4")
+        else if (typeName == NAME(glm::vec3))
         {
-            
-            
-            glUniformMatrix4fv(m_shaderUniforms[SupportedShaderUniforms::Projection], 1, GL_FALSE, glm::value_ptr(mat));
+            glUniform3fv(GetUniformLocation(name), 1, glm::value_ptr(value));
         }
-        else if (name == "vec3")
+        else if (typeName == NAME(glm::vec4))
         {
-            
-            
-            glUniformMatrix4fv(m_shaderUniforms[SupportedShaderUniforms::Projection], 1, GL_FALSE, glm::value_ptr(mat));
+            glUniformMatrix4fv(GetUniformLocation(name), 1, GL_FALSE, glm::value_ptr(value));
         }
-        
-
     }
-    
-    
-    template <typename type>
-    void CreateUniform(string name)
+
+
+    void AddUniform(string name)
     {
-        
+        GetUniformLocation(name);
+    }
+
+    int GetUniformLocation(string name)
+    {
+        return glGetUniformLocation(shaderID, name.c_str());
     }
     
     
     void Bind()
     {
-        glUseProgram(shaderID)
+        glUseProgram(shaderID);
     }
-    
+
+
     void Unbind()
     {
-        glUseProgram(0)
+        glUseProgram(0);
     }
-}
+};

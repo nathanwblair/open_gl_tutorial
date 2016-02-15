@@ -2,6 +2,10 @@
 #define GLM_SWIZZLE_XYZW 
 #include "gl_core_4_4.h"
 #include "GLFW/glfw3.h"
+#include "glm/glm.hpp"
+#include "glm/trigonometric.hpp"
+#include "glm/gtx/quaternion.hpp"
+#include "glm/ext.hpp"
 #include "Application.h"
 
 typedef unsigned int uint;

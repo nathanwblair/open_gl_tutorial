@@ -1,5 +1,4 @@
 #include "GridApplication.h"
-#include "Planet.h"
 #include "Utils.h"
 
 void TestPlanet();
