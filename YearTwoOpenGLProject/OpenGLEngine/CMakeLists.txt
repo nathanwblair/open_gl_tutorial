@@ -10,6 +10,7 @@ include_directories(include)
 # Gather additional source files/headers
 SET(SOURCES
         src/Application.cpp
+        src/CameraApplication.cpp
         src/Cameras/Camera.cpp
         src/Cameras/FlyCamera.cpp
         src/gl_core_4_4.c
@@ -17,6 +18,7 @@ SET(SOURCES
         src/Resources/Asset.cpp)
 SET(HEADERS
         include/Application.h
+        include/CameraApplication.h
         include/Cameras/Camera.h
         include/Cameras/FlyCamera.h
         include/Resources/Grid.h

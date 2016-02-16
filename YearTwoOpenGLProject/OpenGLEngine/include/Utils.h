@@ -6,12 +6,13 @@
 #include "glm/trigonometric.hpp"
 #include "glm/gtx/quaternion.hpp"
 #include "glm/ext.hpp"
-#include "Application.h"
+
+class Application;
 
 typedef unsigned int uint;
 typedef unsigned char uchar;
 
-#define NAME(type) typeid(type).name()
+#define NAME(type) typeid(#type).name()
 
 Application * GetApplication(Application * _application=nullptr)
 {

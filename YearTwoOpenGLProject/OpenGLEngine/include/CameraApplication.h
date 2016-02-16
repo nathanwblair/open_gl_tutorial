@@ -25,7 +25,7 @@ public:
 	virtual bool Startup()
 	{
 		prevTime = 0.0f;
-		deltaTime = NULL;
+		deltaTime = 0.0f;
 
 		flyCamera = new FlyCamera(window);
 
