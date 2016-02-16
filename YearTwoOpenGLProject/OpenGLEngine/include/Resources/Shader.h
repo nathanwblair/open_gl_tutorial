@@ -17,6 +17,7 @@ class Shader :
         public TextAsset
 {
     int shaderID;
+    bool isBound;
     
     Shader() 
         : shaderID(-1)
@@ -25,9 +26,17 @@ class Shader :
     }
 
 
+    virtual void PrepareShaderUniforms() = 0;
+
+
     template <typename type>
     void SetUniform(string name, type value)
     {
+        auto wasBound = isBound;
+
+        if (!isBound)
+            Bind();
+
         string typeName = NAME(type);
         
         if (typeName == NAME(uint))
@@ -54,6 +63,9 @@ class Shader :
         {
             glUniformMatrix4fv(GetUniformLocation(name), 1, GL_FALSE, glm::value_ptr(value));
         }
+
+        if (!wasBound)
+            Unbind();
     }
 
 
@@ -95,33 +107,48 @@ class Shader :
 
         glLinkProgram(shaderID);
 
-        // Error checking
-        {
-            int success = GL_FALSE;
+        CheckForGLSLErrors();
+
+        glDeleteShader(fragShaderID);
+        glDeleteShader(fragShaderID);
+
+
+        PrepareShaderUniforms();
+    }
+
+
+    void CheckForGLSLErrors()
+    {
+        int success = GL_FALSE;
+        glGetProgramiv(shaderID, GL_INFO_LOG_LENGTH, &success);
+        if (success == GL_FALSE) {
+            auto infoLogLength = 0;
             glGetProgramiv(shaderID, GL_INFO_LOG_LENGTH, &infoLogLength);
+
+            char *infoLog = new char[infoLogLength];
+            glGetProgramInfoLog(shaderID, infoLogLength, 0, infoLog);
+
+            printf("Error: Failed to link shader program!\n");
+            printf("%s\n", infoLog);
+
+            delete[] infoLog;
         }
     }
 
 
     int LoadShader(GLenum eType, string& filePath)
     {
-        uint iShader = glCreateShader(eType);
+        uint glslShaderID = glCreateShader(eType);
 
         std::ifstream file;
-        file.open(filePath);
         assert(file.good() && "Unable to open shader file");
 
-        std::stringstream ss;
-        ss << file.rdbuf();
-        file.close();
+        auto shaderCode = GetFile(filePath);
+        const auto pCode = shaderCode.c_str();
+        glShaderSource(glslShaderID, 1, &pCode, 0);
+        glCompileShader(glslShaderID);
 
-
-        string shaderCode = ss.str();
-        const char* pCode = shaderCode.c_str();
-        glShaderSource(iShader, 1, (const char**)&pCode, 0);
-        glCompileShader(iShader);
-
-        return iShader;
+        return glslShaderID;
     }
 
 
@@ -129,6 +156,7 @@ class Shader :
     {
         GetUniformLocation(name);
     }
+
 
     int GetUniformLocation(string name)
     {

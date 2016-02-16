@@ -1,7 +1,5 @@
 #pragma once
 
-#pragma once
-
 #include "GLFW/glfw3.h"
 #include "glm/glm.hpp"
 #include "glm/trigonometric.hpp"
@@ -12,6 +10,7 @@
 using glm::vec3;
 using glm::quat;
 using glm::mat4;
+
 
 class Transform
 {

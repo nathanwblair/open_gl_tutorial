@@ -1,4 +1,4 @@
-project(Geometry)
+project(GridTutorial)
 
 #Bring the headers
 include_directories(include)

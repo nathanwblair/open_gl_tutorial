@@ -12,7 +12,7 @@ class Application;
 typedef unsigned int uint;
 typedef unsigned char uchar;
 
-#define NAME(type) typeid(#type).name()
+#define NAME(type) typeid(type).name()
 
 Application * GetApplication(Application * _application=nullptr)
 {
