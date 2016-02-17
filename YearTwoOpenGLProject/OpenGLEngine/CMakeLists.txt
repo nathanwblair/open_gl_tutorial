@@ -15,7 +15,7 @@ SET(SOURCES
         src/Cameras/FlyCamera.cpp
         src/gl_core_4_4.c
         src/Gizmos.cpp
-        src/Resources/Asset.cpp)
+        src/Resources/Asset.cpp include/Resources/Mesh.h)
 SET(HEADERS
         include/Application.h
         include/CameraApplication.h
@@ -26,7 +26,7 @@ SET(HEADERS
         include/gl_core_4_4.h
         include/Gizmos.h
         include/Resources/TextAsset.h
-        include/Resources/Asset.h)
+        include/Resources/Asset.h include/Resources/Mesh.h)
 
 
 # Need to build GLFW if we haven't already..

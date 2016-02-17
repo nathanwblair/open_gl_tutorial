@@ -15,6 +15,7 @@
       <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/include/Resources/Shader.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/include/Resources/Grid.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/include/Resources/Asset.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/include/Resources/Mesh.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/include/Resources/TextAsset.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/include/gl_core_4_4.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/include/Application.h" isTestSource="false" />
@@ -53,23 +54,47 @@
     <orderEntry type="module-library">
       <library name="Header Search Paths">
         <CLASSES>
+          <root url="file://C:/MinGW/include" />
           <root url="file://C:/MinGW/lib/gcc/mingw32/4.8.1/include" />
           <root url="file://C:/MinGW/lib/gcc/mingw32/4.8.1/include-fixed" />
-          <root url="file://C:/MinGW/include" />
-          <root url="file://$USER_HOME$/.CLion15/system/cmake/generated/YearTwoOpenGLProject-7547f125/7547f125/MinSizeRel/deps/glfw/src" />
-          <root url="file://$USER_HOME$/.CLion15/system/cmake/generated/YearTwoOpenGLProject-7547f125/7547f125/Debug/deps/glfw/src" />
-          <root url="file://$USER_HOME$/.CLion15/system/cmake/generated/YearTwoOpenGLProject-7547f125/7547f125/Release/deps/glfw/src" />
-          <root url="file://$USER_HOME$/.CLion15/system/cmake/generated/YearTwoOpenGLProject-7547f125/7547f125/RelWithDebInfo/deps/glfw/src" />
+          <root url="file://$MODULE_DIR$/OpenGLEngine/include" />
+          <root url="file://$MODULE_DIR$/GridTutorial/include" />
+          <root url="file://$MODULE_DIR$/deps/glfw/include" />
+          <root url="file://$MODULE_DIR$/deps/glm" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/c28bc7ca/c28bc7ca/Release/deps/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/c28bc7ca/c28bc7ca/Debug/deps/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/c28bc7ca/c28bc7ca/MinSizeRel/deps/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/c28bc7ca/c28bc7ca/RelWithDebInfo/deps/glfw/src" />
         </CLASSES>
         <SOURCES>
+          <root url="file://C:/MinGW/include" />
           <root url="file://C:/MinGW/lib/gcc/mingw32/4.8.1/include" />
           <root url="file://C:/MinGW/lib/gcc/mingw32/4.8.1/include-fixed" />
-          <root url="file://C:/MinGW/include" />
-          <root url="file://$USER_HOME$/.CLion15/system/cmake/generated/YearTwoOpenGLProject-7547f125/7547f125/MinSizeRel/deps/glfw/src" />
-          <root url="file://$USER_HOME$/.CLion15/system/cmake/generated/YearTwoOpenGLProject-7547f125/7547f125/Debug/deps/glfw/src" />
-          <root url="file://$USER_HOME$/.CLion15/system/cmake/generated/YearTwoOpenGLProject-7547f125/7547f125/Release/deps/glfw/src" />
-          <root url="file://$USER_HOME$/.CLion15/system/cmake/generated/YearTwoOpenGLProject-7547f125/7547f125/RelWithDebInfo/deps/glfw/src" />
+          <root url="file://$MODULE_DIR$/OpenGLEngine/include" />
+          <root url="file://$MODULE_DIR$/GridTutorial/include" />
+          <root url="file://$MODULE_DIR$/deps/glfw/include" />
+          <root url="file://$MODULE_DIR$/deps/glm" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/c28bc7ca/c28bc7ca/Release/deps/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/c28bc7ca/c28bc7ca/Debug/deps/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/c28bc7ca/c28bc7ca/MinSizeRel/deps/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/c28bc7ca/c28bc7ca/RelWithDebInfo/deps/glfw/src" />
         </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Gizmos.h" />
+          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Resources/Shader.h" />
+          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Resources/Grid.h" />
+          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Resources/Asset.h" />
+          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Resources/Mesh.h" />
+          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Resources/TextAsset.h" />
+          <root url="file://$MODULE_DIR$/OpenGLEngine/include/gl_core_4_4.h" />
+          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Application.h" />
+          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Cameras/Camera.h" />
+          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Cameras/FlyCamera.h" />
+          <root url="file://$MODULE_DIR$/OpenGLEngine/include/CameraApplication.h" />
+          <root url="file://$MODULE_DIR$/GridTutorial/include/GridApplication.h" />
+          <root url="file://$MODULE_DIR$/deps/glfw/include/GLFW/glfw3native.h" />
+          <root url="file://$MODULE_DIR$/deps/glfw/include/GLFW/glfw3.h" />
+        </excluded>
       </library>
     </orderEntry>
   </component>

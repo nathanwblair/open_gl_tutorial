@@ -4,3 +4,12 @@
 [submodule "YearTwoOpenGlProject/deps/glm"]
 	path = YearTwoOpenGlProject/deps/glm
 	url = https://github.com/g-truc/glm.git
+[submodule "YearTwoOpenGLProject/deps/stb"]
+	path = YearTwoOpenGLProject/deps/stb
+	url = https://github.com/nothings/stb.git
+
+[submodule "YearTwoOpenGLProject/deps/mesh_loaders"]
+	
+	path = YearTwoOpenGLProject/deps/mesh_loaders
+	
+	url = https://github.com/nathanwblair/mesh_loaders.git
