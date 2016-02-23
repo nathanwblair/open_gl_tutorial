@@ -9,10 +9,16 @@ class TextAsset
     : public Asset
 {
 public:
-    string GetFile(string path)
+    TextAsset(string _path)
+            : Asset(_path)
+    {
+
+    }
+
+    string GetFile(string _path)
     {
         std::ifstream file;
-        file.open(path);
+        file.open(_path);
         assert(file.good() && "Unable to open asset file");
 
         std::stringstream ss;

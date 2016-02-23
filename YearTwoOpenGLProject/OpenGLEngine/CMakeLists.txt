@@ -1,5 +1,10 @@
 project(OpenGLEngine)
 
+# CMake mostly ripped from https://bitbucket.org/doddzy39/openglengine
+
+
+find_package(FBX)
+
 #Need to find OpenGL link_libraries(
 find_package(OpenGL REQUIRED)
 
@@ -26,8 +31,19 @@ SET(HEADERS
         include/gl_core_4_4.h
         include/Gizmos.h
         include/Resources/TextAsset.h
-        include/Resources/Asset.h include/Resources/Mesh.h)
+        include/Resources/Asset.h include/Resources/Mesh.h include/Rendering/RenderData.h)
 
+SET(EXTRA_SOURCES
+        ${CMAKE_SOURCE_DIR}/deps/Utils/memaligned.cpp
+        ${CMAKE_SOURCE_DIR}/deps/Utils/pow2assert.cpp
+        )
+
+IF(FBX_FOUND)
+    SET(EXTRA_SOURCES
+            ${EXTRA_SOURCES}
+            ${CMAKE_SOURCE_DIR}/deps/mesh_loaders/FBXFile.cpp
+            )
+ENDIF(FBX_FOUND)
 
 # Need to build GLFW if we haven't already..
 option(GLFW_BUILD_EXAMPLES "Build the GLFW example programs" OFF)
@@ -63,3 +79,22 @@ target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES})
 # for this library when compiling it into other projects
 #TODO: Work out why this isn't working...
 target_include_directories (${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+
+
+#Include FBX if supported by this PC
+IF(FBX_FOUND)
+    message(WARNING "FBX Support enabled")
+
+    include_directories(${CMAKE_SOURCE_DIR}/deps/mesh_loaders)
+    include_directories(${FBX_INCLUDE_DIR})
+    message(${FBX_INCLUDE_DIR})
+
+    target_link_libraries(${PROJECT_NAME} debug ${FBX_LIBRARY_DEBUG})
+    target_link_libraries(${PROJECT_NAME} optimized ${FBX_LIBRARY})
+
+    target_compile_definitions(${PROJECT_NAME} PUBLIC FBX_SUPPORTED)
+
+ELSE(FBX_FOUND)
+    message(WARNING "No FBX support in this development environment")
+ENDIF(FBX_FOUND)

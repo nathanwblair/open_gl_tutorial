@@ -4,5 +4,7 @@
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$/deps/glfw" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/deps/glm" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/mesh_loaders" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/stb" vcs="Git" />
   </component>
 </project>

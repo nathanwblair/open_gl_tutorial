@@ -10,7 +10,6 @@
 #include "Utils.h"
 #include "TextAsset.h"
 
-using std::string;
 using std::map;
 
 class Shader :
@@ -19,15 +18,14 @@ class Shader :
     int shaderID;
     bool isBound;
     
-    Shader() 
-        : shaderID(-1)
+    Shader(string _path)
+        : TextAsset(_path),
+          shaderID(-1)
     {
         
     }
 
-
     virtual void PrepareShaderUniforms() = 0;
-
 
     template <typename type>
     void SetUniform(string name, type value)
