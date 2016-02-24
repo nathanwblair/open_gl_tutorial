@@ -86,7 +86,6 @@ target_include_directories (${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/i
 IF(FBX_FOUND)
     message(WARNING "FBX Support enabled")
 
-    include_directories(${CMAKE_SOURCE_DIR}/deps/mesh_loaders)
     include_directories(${FBX_INCLUDE_DIR})
     message(${FBX_INCLUDE_DIR})
 

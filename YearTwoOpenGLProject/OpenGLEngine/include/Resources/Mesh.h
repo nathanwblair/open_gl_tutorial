@@ -6,10 +6,6 @@
 #include <assert.h>
 #include "Utils.h"
 
-#ifdef FBX_SUPPORTED
-#include "FBXFile.h"
-#endif
-
 class Mesh : public Asset
 {
 private:
@@ -21,4 +17,6 @@ public:
     {
 
     }
+
+
 };

@@ -60,12 +60,13 @@
     <orderEntry type="module-library">
       <library name="Header Search Paths">
         <CLASSES>
-          <root url="file://C:/MinGW/include" />
           <root url="file://C:/MinGW/lib/gcc/mingw32/4.8.1/include" />
           <root url="file://C:/MinGW/lib/gcc/mingw32/4.8.1/include-fixed" />
+          <root url="file://C:/MinGW/include" />
           <root url="file://$MODULE_DIR$/OpenGLEngine/include" />
           <root url="file://$MODULE_DIR$/GridTutorial/include" />
           <root url="file://$MODULE_DIR$/deps/glfw/include" />
+          <root url="file://$MODULE_DIR$/deps/mesh_loaders" />
           <root url="file://$MODULE_DIR$/deps/stb" />
           <root url="file://$MODULE_DIR$/deps/glm" />
           <root url="file://$MODULE_DIR$/deps/Utils" />
@@ -75,12 +76,13 @@
           <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/c28bc7ca/c28bc7ca/RelWithDebInfo/deps/glfw/src" />
         </CLASSES>
         <SOURCES>
-          <root url="file://C:/MinGW/include" />
           <root url="file://C:/MinGW/lib/gcc/mingw32/4.8.1/include" />
           <root url="file://C:/MinGW/lib/gcc/mingw32/4.8.1/include-fixed" />
+          <root url="file://C:/MinGW/include" />
           <root url="file://$MODULE_DIR$/OpenGLEngine/include" />
           <root url="file://$MODULE_DIR$/GridTutorial/include" />
           <root url="file://$MODULE_DIR$/deps/glfw/include" />
+          <root url="file://$MODULE_DIR$/deps/mesh_loaders" />
           <root url="file://$MODULE_DIR$/deps/stb" />
           <root url="file://$MODULE_DIR$/deps/glm" />
           <root url="file://$MODULE_DIR$/deps/Utils" />

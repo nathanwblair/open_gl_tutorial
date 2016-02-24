@@ -11,6 +11,7 @@ file(GLOB HEADERS "include/*.h")
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 source_group(Include FILES ${HEADERS}) #This will format the output project file so the headers are placed seperately
 
+
 #This project uses the OpenGL project, so we need to add that to this project
 target_link_libraries (${PROJECT_NAME} OpenGLEngine)
 
