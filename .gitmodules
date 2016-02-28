@@ -1,9 +1,6 @@
 [submodule "YearTwoOpenGLProject/deps/glfw"]
 	path = YearTwoOpenGLProject/deps/glfw
 	url = https://github.com/glfw/glfw.git
-[submodule "YearTwoOpenGlProject/deps/glm"]
-	path = YearTwoOpenGlProject/deps/glm
-	url = https://github.com/g-truc/glm.git
 [submodule "YearTwoOpenGLProject/deps/stb"]
 	path = YearTwoOpenGLProject/deps/stb
 	url = https://github.com/nothings/stb.git
