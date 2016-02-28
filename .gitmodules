@@ -10,3 +10,6 @@
 	path = YearTwoOpenGLProject/deps/mesh_loaders
 	
 	url = https://github.com/nathanwblair/mesh_loaders.git
+[submodule "YearTwoOpenGLProject/deps/glm"]
+	path = YearTwoOpenGLProject/deps/glm
+	url = https://github.com/g-truc/glm.git
