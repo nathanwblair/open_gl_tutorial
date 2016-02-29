@@ -20,18 +20,23 @@ SET(SOURCES
         src/Cameras/FlyCamera.cpp
         src/gl_core_4_4.c
         src/Gizmos.cpp
-        src/Resources/Asset.cpp include/Resources/Mesh.h)
+        src/Assets/Asset.cpp)
 SET(HEADERS
-        include/Application.h
-        include/CameraApplication.h
-        include/Cameras/Camera.h
-        include/Cameras/FlyCamera.h
-        include/Resources/Grid.h
-        include/Resources/Shader.h
-        include/gl_core_4_4.h
-        include/Gizmos.h
-        include/Resources/TextAsset.h
-        include/Resources/Asset.h include/Resources/Mesh.h include/Rendering/RenderData.h)
+    include/Application.h
+    include/CameraApplication.h
+    include/Cameras/Camera.h
+    include/Cameras/FlyCamera.h
+    include/gl_core_4_4.h
+    include/Gizmos.h
+    include/Assets/TextAsset.h
+    include/Assets/Grid.h
+    include/Assets/Shader.h
+    include/Assets/Asset.h 
+	include/Assets/Mesh.h 	
+	include/Assets/Texture.h
+	include/Assets/Material.h
+	include/Rendering/RenderData.h
+	)
 
 SET(EXTRA_SOURCES
         ${CMAKE_SOURCE_DIR}/deps/Utils/memaligned.cpp
@@ -61,13 +66,11 @@ include_directories(${CMAKE_SOURCE_DIR}/deps/tinyobjloader)
 # Tell cmake that this will be a library (and not a exectutable)
 add_library(${PROJECT_NAME} ${SOURCES} ${EXTRA_SOURCES} ${HEADERS})
 
-
 source_group(Base ./)
 source_group(ExtraSources FILES ${EXTRA_SOURCES})
-source_group(Resources .*/Resources/)
-source_group(include/Cameras .*/Cameras/)
+source_group(Assets .*/Assets/)
+source_group(Cameras .*/Cameras/)
 source_group(Rendering .*/Rendering/)
-source_group(AssetLoading .*/AssetLoading/)
 
 # And we need to link against GLFW
 target_link_libraries(${PROJECT_NAME} glfw ${GLFW_LIBRARIES})
