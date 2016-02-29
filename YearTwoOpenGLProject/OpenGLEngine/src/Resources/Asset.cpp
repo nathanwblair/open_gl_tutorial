@@ -1,2 +1,0 @@
-
-#include "Resources/Asset.h"

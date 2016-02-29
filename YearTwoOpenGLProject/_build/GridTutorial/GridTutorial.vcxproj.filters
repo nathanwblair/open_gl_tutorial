@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\GridTutorial\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\GridTutorial\include\GridApplication.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\GridTutorial\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6CA939F7-3917-3B03-B0D9-440CE1B76A90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{40B72991-EAB2-3D5C-8031-76840886E70F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -9,7 +9,7 @@ class Asset
 public:
     string path;
 
-    Asset(string _path) : path(_path)
+	Asset(string _path) : path(_path), isInitialized(false)
     {
 
     }
@@ -17,6 +17,16 @@ public:
     virtual void Load(string _filePath) = 0;
 
     virtual void Unload() = 0;
+
+	virtual void Bind()
+	{
+
+	}
+
+	virtual void Unbind()
+	{
+
+	}
 
     string GetDirectory()
     {
@@ -30,4 +40,5 @@ public:
 
 protected:
     string filePath;
+	bool isInitialized;
 };

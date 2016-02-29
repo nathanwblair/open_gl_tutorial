@@ -1,0 +1,7 @@
+# CMake generation dependency list for this directory.
+C:/Users/nathaniel.blair/Documents/GitHub/open_gl_tutorial/YearTwoOpenGLProject/OpenGLEngine/CMakeLists.txt
+C:/Users/nathaniel.blair/Documents/GitHub/open_gl_tutorial/YearTwoOpenGLProject/cmake/FindFBX.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.5/Modules/FindOpenGL.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.5/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.5/Modules/FindPackageMessage.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CMakeParseArguments.cmake
