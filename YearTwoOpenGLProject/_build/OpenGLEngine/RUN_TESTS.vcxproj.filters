@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\_build\CMakeFiles\131546f589db0a942812d017ee6f853a\RUN_TESTS_force.rule">
+    <CustomBuild Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\_Build\CMakeFiles\1b995c16b4c4ad12b80d248e22117958\RUN_TESTS_force.rule">
       <Filter>Base</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
-      <UniqueIdentifier>{7A667127-2267-3F2B-BA66-79FD312E5810}</UniqueIdentifier>
+      <UniqueIdentifier>{C967D505-F1B8-368B-847A-3D2A5C02D993}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

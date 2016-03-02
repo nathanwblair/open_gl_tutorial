@@ -6,26 +6,64 @@ using std::string;
 
 class Asset
 {
-public:
-    string path;
+protected:
+	string filePath;
+	bool isInitialized;
+	bool isBound;
 
-	Asset(string _path) : path(_path), isInitialized(false)
-    {
+	virtual void Unbind()
+	{
 
-    }
-
-    virtual void Load(string _filePath) = 0;
-
-    virtual void Unload() = 0;
-
+	}
 	virtual void Bind()
 	{
 
 	}
 
-	virtual void Unbind()
-	{
+public:
+    string path;
 
+	Asset(string _path) : path(_path), isInitialized(false), isBound(false)
+    {
+
+    }
+
+    virtual void Load() = 0;
+
+    virtual void Unload() = 0;
+
+	bool BindIfNeeded()
+	{
+		if (!isBound)
+		{
+			SafeUnbind();
+			return true;
+		}
+
+		return false;
+	}
+
+	void UnbindIfNeeded(bool check)
+	{
+		if (check)
+			SafeUnbind();
+	}
+
+	void UnbindIfNeeded()
+	{
+		if (isBound)
+			SafeUnbind();
+	}
+
+	void SafeBind()
+	{
+		isBound = true;
+
+	}
+
+	void SafeUnbind()
+	{
+		isBound = false;
 	}
 
     string GetDirectory()
@@ -37,8 +75,4 @@ public:
 
         return path.substr(0, lastSlash + 1);
     }
-
-protected:
-    string filePath;
-	bool isInitialized;
 };

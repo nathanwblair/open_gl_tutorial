@@ -42,7 +42,7 @@
     <ClInclude Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\deps\glfw\src\internal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\_build\deps\glfw\src\glfw_config.h">
+    <ClInclude Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\_Build\deps\glfw\src\glfw_config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\deps\glfw\include\GLFW\glfw3.h">
@@ -66,10 +66,10 @@
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{6CA939F7-3917-3B03-B0D9-440CE1B76A90}</UniqueIdentifier>
+      <UniqueIdentifier>{A0423364-09B7-3C22-81BF-C0565BA041FF}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{679AC449-896C-3962-8996-92DCA76889D7}</UniqueIdentifier>
+      <UniqueIdentifier>{21A23A32-6C7F-32AB-A093-FB0C7A2E5B6E}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

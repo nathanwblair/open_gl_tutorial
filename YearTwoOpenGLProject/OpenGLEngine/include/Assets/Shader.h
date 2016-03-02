@@ -16,7 +16,6 @@ class Shader :
         public TextAsset
 {
     int shaderID;
-    bool isBound;
     
     Shader(string _path)
         : TextAsset(_path),
@@ -30,10 +29,7 @@ class Shader :
     template <typename type>
     void SetUniform(string name, type value)
     {
-        auto wasBound = isBound;
-
-        if (!isBound)
-            Bind();
+		auto wasBound = BindIfNeeded();
 
         string typeName = NAME(type);
         
@@ -62,12 +58,15 @@ class Shader :
             glUniformMatrix4fv(GetUniformLocation(name), 1, GL_FALSE, glm::value_ptr(value));
         }
 
-        if (!wasBound)
-            Unbind();
+		UnbindIfNeeded(wasBound);
     }
 
+	void Load()
+	{
+		LoadShaderProgramFromFile();
+	}
 
-    void LoadShaderProgramFromFile(string& path)
+    void LoadShaderProgramFromFile()
     {
         assert(shaderID < 0 && "Already have loaded a shader");
 

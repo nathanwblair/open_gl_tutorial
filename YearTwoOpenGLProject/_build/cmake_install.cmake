@@ -29,8 +29,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/nathaniel.blair/Documents/GitHub/open_gl_tutorial/YearTwoOpenGLProject/_build/OpenGLEngine/cmake_install.cmake")
-  include("C:/Users/nathaniel.blair/Documents/GitHub/open_gl_tutorial/YearTwoOpenGLProject/_build/GridTutorial/cmake_install.cmake")
+  include("C:/Users/nathaniel.blair/Documents/GitHub/open_gl_tutorial/YearTwoOpenGLProject/_Build/OpenGLEngine/cmake_install.cmake")
+  include("C:/Users/nathaniel.blair/Documents/GitHub/open_gl_tutorial/YearTwoOpenGLProject/_Build/GridTutorial/cmake_install.cmake")
 
 endif()
 
@@ -42,5 +42,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/nathaniel.blair/Documents/GitHub/open_gl_tutorial/YearTwoOpenGLProject/_build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/nathaniel.blair/Documents/GitHub/open_gl_tutorial/YearTwoOpenGLProject/_Build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

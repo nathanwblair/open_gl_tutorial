@@ -4,6 +4,7 @@ C:/Program Files (x86)/CMake/share/cmake-3.5/Modules/FindThreads.cmake
 C:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CheckLibraryExists.cmake
 C:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CheckSymbolExists.cmake
 C:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CheckIncludeFile.cmake
+C:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CheckIncludeFile.c.in
 C:/Program Files (x86)/CMake/share/cmake-3.5/Modules/FindPackageHandleStandardArgs.cmake
 C:/Program Files (x86)/CMake/share/cmake-3.5/Modules/FindPackageMessage.cmake
 C:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CMakeParseArguments.cmake

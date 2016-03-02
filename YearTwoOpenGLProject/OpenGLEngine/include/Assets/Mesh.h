@@ -7,6 +7,7 @@
 #include "Shader.h"
 
 #include "Assets/Material.h"
+#include "Assets/Asset.h"
 
 class Mesh 
 	: public Asset

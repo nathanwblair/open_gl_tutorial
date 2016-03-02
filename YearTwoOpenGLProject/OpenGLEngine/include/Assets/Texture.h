@@ -8,25 +8,6 @@
 
 #include "Utils.h"
 
-/* Material.h
-
-class TextureSlots
-{
-	enum TextureSlots
-	{
-		DiffuseTexture = 0,
-		AmbientTexture,
-		GlowTexture,
-		GlossTexture,
-		NormalTexture,
-		AlphaTexture,
-		DisplacementTexture,
-
-		TextureSlots_Count
-	};
-}
-
-*/
 
 class Texture :
 	public Asset
@@ -35,7 +16,7 @@ public:
 
 	Texture(string path) : Asset(path)
 	{
-		LoadWithSTBImage(path);
+		Load();
 	}
 
 	~Texture()
@@ -68,7 +49,17 @@ private:
 
 	}
 
-	void LoadWithSTBImage(string& _path)
+	void Load() override
+	{
+		LoadWithSTBImage();
+	}
+
+	void Unload() override
+	{
+
+	}
+
+	void LoadWithSTBImage()
 	{
 		auto data = stbi_load(path.c_str(), 
 			&imageWidth, 

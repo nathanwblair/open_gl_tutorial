@@ -19,7 +19,7 @@ public:
     {
         std::ifstream file;
         file.open(_path);
-        assert(file.good() && "Unable to open asset file");
+        assert(file.good() && "Unable to open text asset file");
 
         std::stringstream ss;
         ss << file.rdbuf();

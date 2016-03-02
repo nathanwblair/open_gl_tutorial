@@ -15,10 +15,10 @@
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{6CA939F7-3917-3B03-B0D9-440CE1B76A90}</UniqueIdentifier>
+      <UniqueIdentifier>{A0423364-09B7-3C22-81BF-C0565BA041FF}</UniqueIdentifier>
     </Filter>
     <Filter Include="Include">
-      <UniqueIdentifier>{40B72991-EAB2-3D5C-8031-76840886E70F}</UniqueIdentifier>
+      <UniqueIdentifier>{BDA2A30D-22BE-331E-BD58-3C67A6013A1F}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
