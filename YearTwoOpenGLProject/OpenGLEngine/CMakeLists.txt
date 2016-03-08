@@ -22,6 +22,7 @@ SET(SOURCES
         src/Gizmos.cpp
         src/Assets/Asset.cpp)
 SET(HEADERS
+
     include/Application.h
     include/CameraApplication.h
     include/Cameras/Camera.h
@@ -31,6 +32,7 @@ SET(HEADERS
     include/Assets/TextAsset.h
     include/Assets/Grid.h
     include/Assets/Shader.h
+    include/Assets/MeshShader.h
     include/Assets/Asset.h 
 	include/Assets/Mesh.h 	
 	include/Assets/Texture.h

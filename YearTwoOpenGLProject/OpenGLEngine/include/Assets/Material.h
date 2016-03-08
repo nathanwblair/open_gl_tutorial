@@ -28,6 +28,28 @@ class Material
 	};
 
 	Texture * textures[TextureSlot::NumSlots];
+	
+
+	Material(string path)
+		: Asset(path)
+	{
+		auto sizeOfTextures = sizeof(Texture*) * TextureSlot::NumSlots;
+
+		memset(textures, 0, sizeOfTextures);
+	}
+
+	
+	~Material()
+	{
+		for (int i = 0; i < TextureSlot::NumSlots; i++)
+		{
+			if (textures[i])
+			{
+				textures[i]->Unload();
+			}
+		}
+	}
+
 
 	bool HasTexture(TextureSlot slot)
 	{

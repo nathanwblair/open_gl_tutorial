@@ -29,6 +29,16 @@ public:
 		uiTextureSlot = uiSlot;
 	}
 
+	void Load() override
+	{
+		LoadWithSTBImage();
+	}
+
+	void Unload() override
+	{
+
+	}
+
 private:
 	uint uiTextureID;
 
@@ -45,16 +55,6 @@ private:
 	}
 
 	void Unbind() override
-	{
-
-	}
-
-	void Load() override
-	{
-		LoadWithSTBImage();
-	}
-
-	void Unload() override
 	{
 
 	}

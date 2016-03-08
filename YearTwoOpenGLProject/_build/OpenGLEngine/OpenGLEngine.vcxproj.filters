@@ -60,6 +60,9 @@
     <ClInclude Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\include\Assets\Shader.h">
       <Filter>Assets</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\include\Assets\MeshShader.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
     <ClInclude Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\include\Assets\Asset.h">
       <Filter>Assets</Filter>
     </ClInclude>

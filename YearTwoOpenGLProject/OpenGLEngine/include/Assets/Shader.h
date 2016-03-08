@@ -6,6 +6,7 @@
 #include <fstream>
 #include <assert.h>
 #include <sstream>
+#include <unordered_map>
 
 #include "Utils.h"
 #include "TextAsset.h"
@@ -16,6 +17,8 @@ class Shader :
         public TextAsset
 {
     int shaderID;
+	std::unordered_map<string, uint> attributes;
+	std::unordered_map<string, uint> uniforms;
     
     Shader(string _path)
         : TextAsset(_path),
@@ -112,6 +115,13 @@ class Shader :
 
         PrepareShaderUniforms();
     }
+
+	virtual void SetupAttributeBindings();
+
+	void AddAttribute(string name, int index=-1)
+	{
+			
+	}
 
 
     void CheckForGLSLErrors()

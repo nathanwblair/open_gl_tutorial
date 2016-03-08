@@ -274,6 +274,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\include\Assets\TextAsset.h" />
     <ClInclude Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\include\Assets\Grid.h" />
     <ClInclude Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\include\Assets\Shader.h" />
+    <ClInclude Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\include\Assets\MeshShader.h" />
     <ClInclude Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\include\Assets\Asset.h" />
     <ClInclude Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\include\Assets\Mesh.h" />
     <ClInclude Include="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\include\Assets\Texture.h" />
