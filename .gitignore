@@ -1,6 +1,8 @@
 YearTwoOpenGLProject/YearTwoOpenGLProject/dep/glfw/docs/**
 YearTwoOpenGLProject/YearTwoOpenGLProject/dep/glm/doc/**
 
+YearTwoOpenGLProject/_build/**
+
 #################
 ## Eclipse
 #################
