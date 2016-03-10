@@ -41,13 +41,10 @@ SET(HEADERS
 	)
 
 SET(EXTRA_SOURCES
-        ${CMAKE_SOURCE_DIR}/deps/Utils/memaligned.cpp
-        ${CMAKE_SOURCE_DIR}/deps/Utils/pow2assert.cpp
         )
 
 IF(FBX_FOUND)
     SET(EXTRA_SOURCES
-            ${EXTRA_SOURCES}
             ${CMAKE_SOURCE_DIR}/deps/mesh_loaders/FBXFile.cpp
             )
 ENDIF(FBX_FOUND)
@@ -79,6 +76,9 @@ target_link_libraries(${PROJECT_NAME} glfw ${GLFW_LIBRARIES})
 
 # and link against OpenGL
 target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES})
+
+#link against utils
+target_link_libraries (${PROJECT_NAME} Utils)
 
 # Finally, we want the compiler to know where to find the headers
 # for this library when compiling it into other projects

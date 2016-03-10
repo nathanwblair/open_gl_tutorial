@@ -14,11 +14,15 @@
 class Material 
 	: public Asset
 {
+private:
+	FBXMaterial * material;
+public:
 	enum TextureSlot
 	{
 		DiffuseTexture = 0,
 		AmbientTexture,
 		GlowTexture,
+		SpecularTexture,
 		GlossTexture,
 		NormalTexture,
 		AlphaTexture,
@@ -30,8 +34,9 @@ class Material
 	Texture * textures[TextureSlot::NumSlots];
 	
 
-	Material(string path)
-		: Asset(path)
+	Material(FBXMaterial* _material, string path)
+		: Asset(path),
+			material(_material)
 	{
 		auto sizeOfTextures = sizeof(Texture*) * TextureSlot::NumSlots;
 
@@ -48,6 +53,31 @@ class Material
 				textures[i]->Unload();
 			}
 		}
+	}
+
+
+	void Load() override
+	{
+		InitializeFromLoaderMaterial(material);
+	}
+
+	void Unload() override
+	{
+	}
+
+
+	void InitializeFromLoaderMaterial(FBXMaterial* material, std::string additionalPath="")
+	{
+		LoadIfExists(TextureSlot::DiffuseTexture, material, TextureSlot::DiffuseTexture, additionalPath);
+		LoadIfExists(TextureSlot::AmbientTexture, material, TextureSlot::AmbientTexture, additionalPath);
+		LoadIfExists(TextureSlot::GlowTexture, material, TextureSlot::GlowTexture, additionalPath);
+		LoadIfExists(TextureSlot::SpecularTexture, material, TextureSlot::SpecularTexture, additionalPath);
+		LoadIfExists(TextureSlot::GlossTexture, material, TextureSlot::GlossTexture, additionalPath);
+		LoadIfExists(TextureSlot::NormalTexture, material, TextureSlot::NormalTexture, additionalPath);
+		LoadIfExists(TextureSlot::AlphaTexture, material, TextureSlot::AlphaTexture, additionalPath);
+		LoadIfExists(TextureSlot::DisplacementTexture, material, TextureSlot::DisplacementTexture, additionalPath);
+
+		isInitialized = true;
 	}
 
 

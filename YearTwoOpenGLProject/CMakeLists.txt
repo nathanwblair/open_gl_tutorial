@@ -27,10 +27,10 @@ set(CMAKE_COLOR_MAKEFILE   ON)
 # add common include directories for dependencies
 include_directories(${CMAKE_SOURCE_DIR}/deps/glfw/include)
 include_directories(${CMAKE_SOURCE_DIR}/deps/glm)
-include_directories(${CMAKE_SOURCE_DIR}/deps/Utils)
+include_directories(${CMAKE_SOURCE_DIR}/deps/utils)
 include_directories(${CMAKE_SOURCE_DIR}/deps/mesh_loaders)
 include_directories(${CMAKE_SOURCE_DIR}/deps/stb)
 
-#add_subdirectory(deps/glfw)
+add_subdirectory(deps/Utils)
 add_subdirectory(OpenGLEngine)
 add_subdirectory(GridTutorial)

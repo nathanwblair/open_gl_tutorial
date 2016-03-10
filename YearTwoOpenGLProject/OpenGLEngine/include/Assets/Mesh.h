@@ -14,7 +14,7 @@ class Mesh
 {
 private:
     std::vector<Mesh*> subMeshes;
-	MeshShader * shader;
+	MeshShader<FBXVertex> * shader;
 	Material * material;
 
 	RenderData * renderData;
@@ -42,9 +42,16 @@ public:
 		}
 	}
 
+	void BuildMaterialFromLoaderNode(Material** material, FBXMaterial* loaderMaterial, string additionalPath = "")
+	{
+		assert(loaderMaterial);
+
+		*material = new Material(loaderMaterial, loaderMaterial->name);
+	}
+
 	void LoadFromFBX()
 	{
-		FBXFile * file = new FBXFile;
+		FBXFile * file = new FBXFile();
 
 		auto isLoaded = file->load(path.c_str());
 		if (!isLoaded)
@@ -56,10 +63,10 @@ public:
 		FBXMeshNode * mesh = file->getMeshByIndex(0);
 		assert(mesh && "Require at least one mesh in your FBX");
 
-		//BuildRenderDataFromLoaderNode
+		shader->verticies = mesh->m_vertices;
+		shader->indicies = mesh->m_indices;
+		shader->BindVertexAndIndexData(&renderData);
 
 	}
-
-//	void BU
 
 };

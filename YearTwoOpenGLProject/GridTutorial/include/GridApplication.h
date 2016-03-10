@@ -1,8 +1,11 @@
 #pragma once
 #include "CameraApplication.h"
 #include "Planet.h"
+#include "dynamic_enum\DynamicEnum.h"
+#include "merge_structs\Merger.h"
 
 class Grid;
+
 
 void TestPlanet()
 {
@@ -20,6 +23,45 @@ void TestPlanet()
 	planet2->Draw();
 }
 
+void TestMergeStruct()
+{
+	struct MeshVertex
+	{
+		float a;
+		float b;
+	};
+
+	struct CableVertex
+	{
+		float c;
+		float d;
+	};
+
+	auto merger = Merge<MeshVertex, CableVertex>(MeshVertex(), CableVertex()).result;
+}
+
+void TestEnum()
+{
+	DynamicEnum dynamicEnum = DynamicEnum();
+
+	auto a = dynamicEnum.Find("test");
+	assert(a == -1);
+
+	dynamicEnum.Add("Size");
+	dynamicEnum.Add("Position");
+	dynamicEnum.Add("Weight");
+	dynamicEnum.Add("Color");
+
+	a = dynamicEnum.Get("Color");
+	assert(a == 3);
+
+	dynamicEnum.Set("Colour", dynamicEnum.Get("Color"));
+	a = dynamicEnum.Get("Colour");
+	assert(a == 3);
+
+	a = dynamicEnum.Get("test");
+}
+
 class GridApplication
 	: public CameraApplication
 {
@@ -30,8 +72,8 @@ private:
 public:
 	void Draw()
 	{
-		//grid->Draw();
 		TestPlanet();
+		TestMergeStruct();
 	}
 
 	bool Update()

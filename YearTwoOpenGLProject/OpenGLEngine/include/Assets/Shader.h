@@ -8,30 +8,110 @@
 #include <sstream>
 #include <unordered_map>
 
+#include "dynamic_enum\DynamicEnum.h"
+
+#include "Rendering\RenderData.h"
+
 #include "Utils.h"
 #include "TextAsset.h"
+#include "merge_structs\Merger.h"
 
-using std::map;
-
+template <typename vertex_data_type>
 class Shader :
         public TextAsset
 {
+private:
+	int currentOffset;
+
+	bool isInitializingAttributes;
+public:
     int shaderID;
-	std::unordered_map<string, uint> attributes;
-	std::unordered_map<string, uint> uniforms;
+
+	typedef vertex_data_type vertex_type;
+	DynamicEnum attributes;
+	DynamicEnum uniforms;
+
+	typedef vector<vertex_data_type> vertex_array_type;
+	typedef vector<uint> index_array_type;
+
+	vertex_array_type verticies;
+	index_array_type indicies;
+
     
-    Shader(string _path)
-        : TextAsset(_path),
-          shaderID(-1)
+	Shader(string _path, 
+		vertex_array_type  _verticies = vertex_array_type(), 
+		index_array_type _indicies = index_array_type())
+		: TextAsset(_path),
+			shaderID(-1),
+			verticies(_verticies),
+			indicies(_indicies)
     {
         
     }
 
-    virtual void PrepareShaderUniforms() = 0;
+	virtual void InitializeUniforms() = 0;
+	virtual void InitializeAttributes() = 0;
 
+
+	void BindVertexAndIndexData(RenderData** renderData)
+	{		
+		assert(renderData);
+
+		*renderData = new RenderData();
+		(*renderData)->GenerateBuffers(RenderData::Buffers::ALL);
+
+		(*renderData)->Bind();
+
+		glBufferData(GL_ARRAY_BUFFER,
+			verticies.size() * sizeof(vertex_data_type),
+			verticies.data(), GL_STATIC_DRAW);
+
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER,
+			indicies.size() * sizeof(uint),
+			indicies.data(), GL_STATIC_DRAW);
+
+		EnableAttributes();
+		InitializeAttributes();
+
+		(*renderData)->SetIndexCount(indicies.size());
+
+		(*renderData)->Unbind();
+
+	}
+
+
+	//(void*)(offsetof(FBXVertex, normal))
+	template <typename type>
+	void SetAttribute(string name, type value)
+	{
+		if (!isInitializingAttributes)
+			throw std::bad_function_call("Cannot set attribute until initializing attributes");
+
+		if (attributes.Find(name) == -1)
+		{
+			attributes.Add(name);
+		}
+
+		if (NAME(type) == NAME(float))
+		{
+			glVertexAttribPointer(attributes.Get(name), sizeof(type), GL_FLOAT, GL_FALSE, sizeof(vertex_data_type), (void*)(currentOffset));
+		}
+		else
+		{
+			throw std::invalid_argument("Attribute type unsupported");
+		}
+
+		currentOffset += sizeof(type);
+	}
+	
     template <typename type>
     void SetUniform(string name, type value)
     {
+		if (uniforms.Find(name) == -1)
+		{
+			uniforms.Add(name);
+		}
+
 		auto wasBound = BindIfNeeded();
 
         string typeName = NAME(type);
@@ -113,15 +193,8 @@ class Shader :
         glDeleteShader(fragShaderID);
 
 
-        PrepareShaderUniforms();
+        InitializeUniforms();
     }
-
-	virtual void SetupAttributeBindings();
-
-	void AddAttribute(string name, int index=-1)
-	{
-			
-	}
 
 
     void CheckForGLSLErrors()
@@ -159,17 +232,34 @@ class Shader :
     }
 
 
-    void AddUniform(string name)
-    {
-        GetUniformLocation(name);
-    }
+	bool HasUniform(string name)
+	{
+		return uniforms.Find(name) != -1;
+	}
 
 
     int GetUniformLocation(string name)
     {
         return glGetUniformLocation(shaderID, name.c_str());
     }
-    
+
+
+	void EnableAttributes()
+	{
+		for (uint index = 0; index < attributes.Size(); index++)
+		{
+			glEnableVertexAttribArray(index); 
+		}
+	}
+
+
+	void SetupAttributeBindings()
+	{
+		for (uint index = 0; index < attributes.Size(); index++)
+		{
+			glBindAttribLocation(shaderID, index, attributes.Get(index));
+		}
+	}
     
     void Bind()
     {

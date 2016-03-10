@@ -54,6 +54,11 @@ public:
         ALL = 7
     };
 
+	void SetIndexCount(uint count)
+	{
+		uiIndexCount = count;
+	}
+
     void GenerateBuffers(uchar uiBuffers)
     {
         DestroyBuffers(uiBuffers);
