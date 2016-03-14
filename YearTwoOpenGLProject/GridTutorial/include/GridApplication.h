@@ -3,6 +3,9 @@
 #include "Planet.h"
 #include "dynamic_enum\DynamicEnum.h"
 #include "merge_structs\Merger.h"
+#include "Assets/FBXMesh.h"
+
+#include "Assets\GridMesh.h"
 
 class Grid;
 
@@ -40,6 +43,7 @@ void TestMergeStruct()
 	auto merger = Merge<MeshVertex, CableVertex>(MeshVertex(), CableVertex()).result;
 }
 
+
 void TestEnum()
 {
 	DynamicEnum dynamicEnum = DynamicEnum();
@@ -51,6 +55,7 @@ void TestEnum()
 	dynamicEnum.Add("Position");
 	dynamicEnum.Add("Weight");
 	dynamicEnum.Add("Color");
+	
 
 	a = dynamicEnum.Get("Color");
 	assert(a == 3);
@@ -59,8 +64,26 @@ void TestEnum()
 	a = dynamicEnum.Get("Colour");
 	assert(a == 3);
 
-	a = dynamicEnum.Get("test");
+	auto index = dynamicEnum.First("Size");
+	assert(index == 0);
+
+	dynamicEnum.Add("NormalTexture");
+	dynamicEnum.Add("AlphaTexture");
+	index = dynamicEnum.First("NormalTexture");
+	assert(index == 4);
+
+	index = dynamicEnum.LocalFind("Texture", "Normal");
+	assert(index == 0);
+
+	dynamicEnum.LocalGet("Texture", "Normal");
 }
+
+
+void TestRenderer()
+{
+
+}
+
 
 class GridApplication
 	: public CameraApplication
@@ -69,15 +92,30 @@ private:
 	uint programID;
 	Grid * grid;
 
+	FBXMesh * mesh;
+	GridMesh * noise;
+
 public:
 	void Draw()
 	{
-		TestPlanet();
-		TestMergeStruct();
+		mesh = new FBXMesh("test.fbx");
+
+		noise = new GridMesh("test.texture");
+
+		noise->Load();
+		mesh->Load();
+
 	}
 
 	bool Update()
 	{
+		noise->Update(deltaTime);
+		mesh->Update(deltaTime);
+
+		auto lightTransform = Transform();
+
+		noise->Render(*flyCamera, lightTransform, lightTransform, true);
+
 		return CameraApplication::Update();
 	}
 

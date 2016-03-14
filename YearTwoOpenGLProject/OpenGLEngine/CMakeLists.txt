@@ -20,24 +20,32 @@ SET(SOURCES
         src/Cameras/FlyCamera.cpp
         src/gl_core_4_4.c
         src/Gizmos.cpp
-        src/Assets/Asset.cpp)
+        src/Assets/Asset.cpp
+        src/MathTypes/Quaternion.cpp
+        src/MathTypes/Transform.cpp)
 SET(HEADERS
-
-    include/Application.h
-    include/CameraApplication.h
-    include/Cameras/Camera.h
-    include/Cameras/FlyCamera.h
-    include/gl_core_4_4.h
-    include/Gizmos.h
-    include/Assets/TextAsset.h
-    include/Assets/Grid.h
-    include/Assets/Shader.h
-    include/Assets/MeshShader.h
-    include/Assets/Asset.h 
-	include/Assets/Mesh.h 	
-	include/Assets/Texture.h
-	include/Assets/Material.h
-	include/Rendering/RenderData.h
+        include/Utils.h
+        include/Application.h
+        include/CameraApplication.h
+        include/Cameras/Camera.h
+        include/Cameras/FlyCamera.h
+        include/gl_core_4_4.h
+        include/Gizmos.h
+        include/Assets/TextAsset.h
+        include/Assets/Grid.h
+        include/Assets/Shader.h
+        include/Assets/MeshShader.h
+        include/Assets/AnimatedMeshShader.h
+        include/Assets/GridMesh.h
+        include/Assets/Asset.h
+        include/Assets/Mesh.h
+        include/Assets/FBXMesh.h
+        include/Assets/Texture.h
+        include/Assets/Material.h
+        include/Rendering/RenderData.h
+        include/MathTypes/Quaternion.h
+        include/MathTypes/Transform.h
+        include/MathTypes/BoundingSphere.h
 	)
 
 SET(EXTRA_SOURCES
@@ -68,6 +76,7 @@ add_library(${PROJECT_NAME} ${SOURCES} ${EXTRA_SOURCES} ${HEADERS})
 source_group(Base ./)
 source_group(ExtraSources FILES ${EXTRA_SOURCES})
 source_group(Assets .*/Assets/)
+source_group(Math .*/MathTypes/)
 source_group(Cameras .*/Cameras/)
 source_group(Rendering .*/Rendering/)
 

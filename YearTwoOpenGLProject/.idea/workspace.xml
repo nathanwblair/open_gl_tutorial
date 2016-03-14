@@ -3,10 +3,11 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" assignedExecutableTargets="true" buildAllGenerated="true">
     <generated>
       <config projectName="ComputerGraphics" targetName="OpenGLEngine" />
-      <config projectName="ComputerGraphics" targetName="Geometry" />
-      <config projectName="ComputerGraphics" targetName="GridTutorial" />
-      <config projectName="YearTwoOpenGLProject" targetName="YearTwoOpenGLProject" />
       <config projectName="ComputerGraphics" targetName="glfw" />
+      <config projectName="ComputerGraphics" targetName="GridTutorial" />
+      <config projectName="ComputerGraphics" targetName="Utils" />
+      <config projectName="ComputerGraphics" targetName="Geometry" />
+      <config projectName="YearTwoOpenGLProject" targetName="YearTwoOpenGLProject" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true" GENERATION_PASS_SYSTEM_ENVIRONMENT="true">
@@ -16,109 +17,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c47d30de-18c5-4fdd-b5c3-11f9240ce63e" name="Default" comment="Refactored / Converted to CMake/CLion proj">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/3.5.0-rc3/CMakeDetermineCompilerABI_C.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/3.5.0-rc3/CMakeDetermineCompilerABI_CXX.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/3.5.0-rc3/CompilerIdC/CompilerIdC.exe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/3.5.0-rc3/CompilerIdCXX/CompilerIdCXX.exe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/feature_tests.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/ALL_BUILD.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/ALL_BUILD.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeCache.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/3.5.0-rc3/CMakeCCompiler.cmake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/3.5.0-rc3/CMakeCXXCompiler.cmake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/3.5.0-rc3/CMakeRCCompiler.cmake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/3.5.0-rc3/CMakeSystem.cmake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/3.5.0-rc3/CompilerIdC/CMakeCCompilerId.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/3.5.0-rc3/CompilerIdC/CompilerIdC.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/3.5.0-rc3/CompilerIdCXX/CMakeCXXCompilerId.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/3.5.0-rc3/CompilerIdCXX/CompilerIdCXX.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/40492ce5308974677f84e9991b504127/INSTALL_force.rule" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/40492ce5308974677f84e9991b504127/RUN_TESTS_force.rule" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/9387c582c0430ff7f917fc3941d730f5/INSTALL_force.rule" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/9387c582c0430ff7f917fc3941d730f5/RUN_TESTS_force.rule" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/957c56cd76bab90e42fa2f4117fce697/INSTALL_force.rule" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/957c56cd76bab90e42fa2f4117fce697/RUN_TESTS_force.rule" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/957c56cd76bab90e42fa2f4117fce697/generate.stamp.rule" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/TargetDirectories.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/b5e4386f0dc392fc100bba2b58377c5b/INSTALL_force.rule" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/b5e4386f0dc392fc100bba2b58377c5b/RUN_TESTS_force.rule" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/b607b003f240be82f14a0702837231cc/INSTALL_force.rule" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/b607b003f240be82f14a0702837231cc/RUN_TESTS_force.rule" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/cmake.check_cache" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/feature_tests.cxx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/generate.stamp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/generate.stamp.depend" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CMakeFiles/generate.stamp.list" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/CTestTestfile.cmake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/ComputerGraphics.sln" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/GridTutorial/ALL_BUILD.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/GridTutorial/ALL_BUILD.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/GridTutorial/CMakeFiles/generate.stamp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/GridTutorial/CMakeFiles/generate.stamp.depend" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/GridTutorial/CTestTestfile.cmake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/GridTutorial/GridTutorial.sln" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/GridTutorial/GridTutorial.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/GridTutorial/GridTutorial.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/GridTutorial/INSTALL.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/GridTutorial/INSTALL.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/GridTutorial/RUN_TESTS.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/GridTutorial/RUN_TESTS.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/GridTutorial/cmake_install.cmake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/INSTALL.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/INSTALL.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/OpenGLEngine/ALL_BUILD.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/OpenGLEngine/ALL_BUILD.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/OpenGLEngine/CMakeFiles/generate.stamp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/OpenGLEngine/CMakeFiles/generate.stamp.depend" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/OpenGLEngine/CTestTestfile.cmake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/OpenGLEngine/INSTALL.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/OpenGLEngine/INSTALL.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/OpenGLEngine/OpenGLEngine.sln" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/OpenGLEngine/OpenGLEngine.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/OpenGLEngine/OpenGLEngine.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/OpenGLEngine/RUN_TESTS.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/OpenGLEngine/RUN_TESTS.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/OpenGLEngine/cmake_install.cmake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/RUN_TESTS.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/RUN_TESTS.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/ZERO_CHECK.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/ZERO_CHECK.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/cmake_install.cmake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/ALL_BUILD.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/ALL_BUILD.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/CMakeFiles/generate.stamp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/CMakeFiles/generate.stamp.depend" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/CTestTestfile.cmake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/GLFW.sln" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/INSTALL.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/INSTALL.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/RUN_TESTS.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/RUN_TESTS.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/cmake_install.cmake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/docs/Doxyfile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/src/CMakeFiles/generate.stamp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/src/CMakeFiles/generate.stamp.depend" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/src/CTestTestfile.cmake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/src/INSTALL.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/src/INSTALL.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/src/RUN_TESTS.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/src/RUN_TESTS.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/src/cmake_install.cmake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/src/glfw.vcxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/src/glfw.vcxproj.filters" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/src/glfw3.pc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/src/glfw3Config.cmake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/src/glfw3ConfigVersion.cmake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/deps/glfw/src/glfw_config.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OpenGLEngine/include/Assets/AnimatedMeshShader.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OpenGLEngine/include/Assets/FBXMesh.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OpenGLEngine/include/Assets/GridMesh.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OpenGLEngine/include/MathTypes/BoundingSphere.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OpenGLEngine/src/MathTypes/Transform.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/shaders/default.shader" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/shaders/fragment/default.frag" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/shaders/fragment/lit.frag" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/shaders/fragment/textured.frag" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/shaders/lighting.shader" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/shaders/skinning.shader" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/shaders/textured.shader" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/shaders/vertex/default.vert" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/shaders/vertex/skinning.vert" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OpenGLEngine/src/Transform.cpp" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/OpenGLEngine/include/Quaternion.h" afterPath="$PROJECT_DIR$/OpenGLEngine/include/MathTypes/Quaternion.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/OpenGLEngine/include/Transform.h" afterPath="$PROJECT_DIR$/OpenGLEngine/include/MathTypes/Transform.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/OpenGLEngine/src/Quaternion.cpp" afterPath="$PROJECT_DIR$/OpenGLEngine/src/MathTypes/Quaternion.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deps/mesh_loaders" afterPath="$PROJECT_DIR$/deps/mesh_loaders" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deps/utils" afterPath="$PROJECT_DIR$/deps/utils" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/YearTwoOpenGLProject.iml" afterPath="$PROJECT_DIR$/.idea/YearTwoOpenGLProject.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GridTutorial/CMakeLists.txt" afterPath="$PROJECT_DIR$/GridTutorial/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GridTutorial/include/GridApplication.h" afterPath="$PROJECT_DIR$/GridTutorial/include/GridApplication.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OpenGLEngine/CMakeLists.txt" afterPath="$PROJECT_DIR$/OpenGLEngine/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OpenGLEngine/include/Resources/Mesh.h" afterPath="$PROJECT_DIR$/OpenGLEngine/include/Resources/Mesh.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OpenGLEngine/src/Application.cpp" afterPath="$PROJECT_DIR$/OpenGLEngine/src/Application.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deps/mesh_loaders/FBXFile.cpp" afterPath="$PROJECT_DIR$/deps/mesh_loaders/FBXFile.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OpenGLEngine/include/Assets/Asset.h" afterPath="$PROJECT_DIR$/OpenGLEngine/include/Assets/Asset.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OpenGLEngine/include/Assets/Material.h" afterPath="$PROJECT_DIR$/OpenGLEngine/include/Assets/Material.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OpenGLEngine/include/Assets/Mesh.h" afterPath="$PROJECT_DIR$/OpenGLEngine/include/Assets/Mesh.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OpenGLEngine/include/Assets/MeshShader.h" afterPath="$PROJECT_DIR$/OpenGLEngine/include/Assets/MeshShader.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OpenGLEngine/include/Assets/Shader.h" afterPath="$PROJECT_DIR$/OpenGLEngine/include/Assets/Shader.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OpenGLEngine/include/CameraApplication.h" afterPath="$PROJECT_DIR$/OpenGLEngine/include/CameraApplication.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OpenGLEngine/include/Cameras/Camera.h" afterPath="$PROJECT_DIR$/OpenGLEngine/include/Cameras/Camera.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OpenGLEngine/include/Utils.h" afterPath="$PROJECT_DIR$/OpenGLEngine/include/Utils.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OpenGLEngine/src/Cameras/Camera.cpp" afterPath="$PROJECT_DIR$/OpenGLEngine/src/Cameras/Camera.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deps/mesh_loaders/FBXFile.h" afterPath="$PROJECT_DIR$/deps/mesh_loaders/FBXFile.h" />
     </list>
     <ignored path="YearTwoOpenGLProject.iws" />
@@ -154,11 +85,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="FBXMesh.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OpenGLEngine/include/Assets/FBXMesh.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding>
+                <element signature="e#13#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Application.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OpenGLEngine/src/Application.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding>
                 <element signature="e#22#42#0" expanded="true" />
               </folding>
@@ -166,25 +109,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GridTutorial/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14705883">
+            <state vertical-scroll-proportion="0.0">
               <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="memaligned.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deps/Utils/memaligned.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-              <folding>
-                <marker date="1455669829494" expanded="false" signature="54:65" placeholder="..." />
-                <marker date="1455669829494" expanded="false" signature="252:253" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -192,9 +122,41 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OpenGLEngine/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.379311">
-              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DynamicEnum.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deps/utils/dynamic_enum/DynamicEnum.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="101" column="9" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DynamicEnum.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deps/utils/dynamic_enum/DynamicEnum.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="60" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnimatedMeshShader.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OpenGLEngine/include/Assets/AnimatedMeshShader.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
+              <folding>
+                <element signature="e#13#31#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -203,78 +165,19 @@
         <entry file="file://$PROJECT_DIR$/deps/mesh_loaders/FBXFile.h">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
-                <marker date="1456276011019" expanded="true" signature="329:1467" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="368:583" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="607:1062" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="1490:1943" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="1965:2131" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="2211:3009" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="2233:2405" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="3207:3699" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="3249:3291" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="3702:3888" placeholder="//..." />
-                <marker date="1456276011019" expanded="true" signature="4369:4409" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="5346:5524" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="5602:5727" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="5816:6188" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="6254:6662" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="6860:10971" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="6979:7132" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="11270:11274" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="11307:11311" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="11662:11666" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="11793:12060" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="12097:12101" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="12326:12330" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="12359:12401" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="12469:12492" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="12529:12533" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="12571:12595" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="12634:12638" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="12678:12703" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="12744:12748" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="12865:12869" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="12906:12910" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="13002:13006" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="13037:13063" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="13183:13187" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="13226:13249" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="13305:13343" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="13415:13463" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="13625:13629" placeholder="{...}" />
-                <marker date="1456276011019" expanded="true" signature="13666:13755" placeholder="{...}" />
+                <element signature="e#14#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FindFBX.cmake" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FindFBX.cmake" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cmake/FindFBX.cmake">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.344828">
-              <caret line="96" column="40" selection-start-line="96" selection-start-column="40" selection-end-line="96" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Asset.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenGLEngine/include/Resources/Asset.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Asset.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenGLEngine/src/Resources/Asset.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.8765625">
+              <caret line="116" column="19" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -310,10 +213,13 @@
         <option value="$PROJECT_DIR$/cmake/FindFBX.cmake" />
         <option value="$PROJECT_DIR$/deps/mesh_loaders/FBXFile.h" />
         <option value="$PROJECT_DIR$/OpenGLEngine/include/Resources/Mesh.h" />
-        <option value="$PROJECT_DIR$/OpenGLEngine/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/GridTutorial/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/OpenGLEngine/src/Application.cpp" />
+        <option value="$PROJECT_DIR$/OpenGLEngine/include/Assets/AnimatedMeshShader.h" />
+        <option value="$PROJECT_DIR$/OpenGLEngine/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/deps/utils/dynamic_enum/DynamicEnum.h" />
+        <option value="$PROJECT_DIR$/deps/utils/dynamic_enum/DynamicEnum.cpp" />
       </list>
     </option>
   </component>
@@ -325,8 +231,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -465,6 +371,90 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="OpenGLEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YearTwoOpenGLProject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YearTwoOpenGLProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OpenGLEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="include" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YearTwoOpenGLProject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YearTwoOpenGLProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OpenGLEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="include" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MathTypes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YearTwoOpenGLProject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YearTwoOpenGLProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OpenGLEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="include" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YearTwoOpenGLProject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YearTwoOpenGLProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="GridTutorial" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -483,7 +473,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Utils" />
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YearTwoOpenGLProject" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YearTwoOpenGLProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="deps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dynamic_enum" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -532,17 +544,17 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nathanwblair\Documents\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\include\Assets" />
+      <recent name="C:\Users\nathanwblair\Documents\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\include" />
+      <recent name="C:\Users\nathaniel.blair\ClionProjects\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\include\Rendering" />
+      <recent name="C:\Users\nathaniel.blair\ClionProjects\open_gl_tutorial\YearTwoOpenGLProject\cmake" />
+      <recent name="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\src\Resources" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\nathaniel.blair\ClionProjects\open_gl_tutorial\YearTwoOpenGLProject\deps" />
       <recent name="C:\Users\nathaniel.blair\ClionProjects\open_gl_tutorial\YearTwoOpenGLProject\cmake" />
       <recent name="F:\Git\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\include" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nathaniel.blair\ClionProjects\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\include\Rendering" />
-      <recent name="C:\Users\nathaniel.blair\ClionProjects\open_gl_tutorial\YearTwoOpenGLProject\cmake" />
-      <recent name="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\src\Resources" />
-      <recent name="C:\Users\nathaniel.blair\Documents\GitHub\open_gl_tutorial\YearTwoOpenGLProject\OpenGLEngine\src" />
-      <recent name="F:\Git\open_gl_tutorial\YearTwoOpenGLProject\GridTutorial\src" />
     </key>
   </component>
   <component name="RunManager" selected="Application.GridTutorial">
@@ -595,13 +607,18 @@
       <envs />
       <method />
     </configuration>
-    <list size="6">
+    <configuration default="false" name="Utils" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="ComputerGraphics" TARGET_NAME="Utils" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
       <item index="1" class="java.lang.String" itemvalue="Application.YearTwoOpenGLProject" />
       <item index="2" class="java.lang.String" itemvalue="Application.glfw" />
       <item index="3" class="java.lang.String" itemvalue="Application.Geometry" />
       <item index="4" class="java.lang.String" itemvalue="Application.OpenGLEngine" />
       <item index="5" class="java.lang.String" itemvalue="Application.GridTutorial" />
+      <item index="6" class="java.lang.String" itemvalue="Application.Utils" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -655,29 +672,37 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29637527" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32214764" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30705395" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3176734" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3411633" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32662192" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28361857" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277405" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277405" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -694,12 +719,59 @@
           <url>file://$PROJECT_DIR$/OpenGLEngine/include/Application.h</url>
           <line>83</line>
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/OpenGLEngine/include/Assets/FBXMesh.h</url>
+          <line>1</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="28" />
+      <option name="time" value="30" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/GridTutorial/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deps/utils/memaligned.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenGLEngine/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deps/mesh_loaders/FBXFile.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#14#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake/FindFBX.cmake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="96" column="40" selection-start-line="96" selection-start-column="40" selection-end-line="96" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/OpenGLEngine/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -829,13 +901,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpenGLEngine/src/Cameras/Camera.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GridTutorial/include/GridApplication.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -868,13 +933,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenGLEngine/include/Resources/Grid.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="5" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -914,27 +972,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpenGLEngine/src/Quaternion.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenGLEngine/include/Quaternion.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenGLEngine/include/Transform.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/MinGW/include/winuser.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -946,13 +983,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding>
-            <element signature="e#721#820#1" expanded="false" />
-            <element signature="e#827#1531#0" expanded="false" />
-            <element signature="e#1920#1971#0" expanded="false" />
-            <element signature="e#1977#2028#0" expanded="false" />
-            <element signature="e#2034#2085#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -960,46 +990,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-          <folding>
-            <element signature="e#39#63#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpenGLEngine/include/Resources/TextAsset.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="e#13#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenGLEngine/src/Resources/Asset.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenGLEngine/include/Resources/Asset.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deps/Utils/memaligned.h">
+    <entry file="file://$PROJECT_DIR$/deps/utils/memaligned.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-          <folding>
-            <marker date="1455669829494" expanded="false" signature="54:65" placeholder="..." />
-            <marker date="1455669829494" expanded="false" signature="252:253" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1007,64 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3529412">
           <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deps/mesh_loaders/FBXFile.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <marker date="1456276011019" expanded="true" signature="329:1467" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="368:583" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="607:1062" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="1490:1943" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="1965:2131" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="2211:3009" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="2233:2405" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="3207:3699" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="3249:3291" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="3702:3888" placeholder="//..." />
-            <marker date="1456276011019" expanded="true" signature="4369:4409" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="5346:5524" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="5602:5727" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="5816:6188" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="6254:6662" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="6860:10971" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="6979:7132" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="11270:11274" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="11307:11311" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="11662:11666" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="11793:12060" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="12097:12101" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="12326:12330" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="12359:12401" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="12469:12492" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="12529:12533" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="12571:12595" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="12634:12638" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="12678:12703" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="12744:12748" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="12865:12869" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="12906:12910" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="13002:13006" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="13037:13063" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="13183:13187" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="13226:13249" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="13305:13343" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="13415:13463" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="13625:13629" placeholder="{...}" />
-            <marker date="1456276011019" expanded="true" signature="13666:13755" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake/FindFBX.cmake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.344828">
-          <caret line="96" column="40" selection-start-line="96" selection-start-column="40" selection-end-line="96" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1072,35 +1012,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2647059">
           <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenGLEngine/src/Application.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="e#0#28#0" expanded="false" />
+            <element signature="e#22#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpenGLEngine/include/Resources/Shader.h">
+    <entry file="file://$PROJECT_DIR$/OpenGLEngine/src/Cameras/Camera.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.029411765">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding>
-            <element signature="e#14#31#0" expanded="false" />
-            <element signature="e#427#442#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.5676127">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpenGLEngine/include/Resources/Mesh.h">
+    <entry file="file://$PROJECT_DIR$/GridTutorial/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0882353">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenGLEngine/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.379311">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1113,20 +1048,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpenGLEngine/src/Application.cpp">
+    <entry file="file://$PROJECT_DIR$/deps/mesh_loaders/FBXFile.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
-            <element signature="e#22#42#0" expanded="true" />
+            <element signature="e#14#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GridTutorial/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/OpenGLEngine/include/Assets/FBXMesh.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14705883">
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="e#13#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenGLEngine/include/Assets/AnimatedMeshShader.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
+          <folding>
+            <element signature="e#13#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenGLEngine/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deps/utils/dynamic_enum/DynamicEnum.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="101" column="9" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deps/utils/dynamic_enum/DynamicEnum.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="60" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake/FindFBX.cmake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8765625">
+          <caret line="116" column="19" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
           <folding />
         </state>
       </provider>

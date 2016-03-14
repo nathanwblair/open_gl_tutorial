@@ -23,7 +23,7 @@ protected:
 public:
     string path;
 
-	Asset(string _path) : path(_path), isInitialized(false), isBound(false)
+	Asset(string _path) : path("data/" + _path), isInitialized(false), isBound(false)
     {
 
     }
@@ -36,7 +36,7 @@ public:
 	{
 		if (!isBound)
 		{
-			SafeUnbind();
+			SafeBind();
 			return true;
 		}
 

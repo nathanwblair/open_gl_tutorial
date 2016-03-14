@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 #include <assert.h>
+#include <unordered_map>
+
 #include "Utils.h"
 
 #include "Rendering/RenderData.h"
@@ -9,64 +11,106 @@
 #include "Assets/Material.h"
 #include "Assets/Asset.h"
 
+#include "MathTypes\Transform.h"
+#include "Cameras\Camera.h"
+#include "MathTypes\BoundingSphere.h"
+
 class Mesh 
 	: public Asset
 {
 private:
-    std::vector<Mesh*> subMeshes;
-	MeshShader<FBXVertex> * shader;
-	Material * material;
-
-	RenderData * renderData;
-
 	bool isValidated;
 
 public:
-	
-	Mesh(string path)
+	BoundingSphere boundingSphere;
+    std::vector<Mesh*> subMeshes;
+	Material * material;
+
+	MeshShader * shader;
+
+
+	RenderData * renderData;
+
+	Mesh(string path="")
 		: Asset(path),
 		renderData(nullptr),
 		shader(nullptr),
 		material(nullptr),
 		isValidated(nullptr)
 	{
-		auto indexFileExtension = path.find_last_of(".") + 1;
-		
-		assert(indexFileExtension != 0 && "Need to include file extension");
-
-		auto fileExtension = path.substr(indexFileExtension);
-
-		if (fileExtension == "fbx")
+		if (path != "")
 		{
-			LoadFromFBX();
+			Load();
 		}
 	}
 
-	void BuildMaterialFromLoaderNode(Material** material, FBXMaterial* loaderMaterial, string additionalPath = "")
+
+	void SetShader(MeshShader * _shader)
+	{
+		shader = _shader;
+	}
+
+
+	void Unload() override
+	{
+		Unbind();
+
+		material->Unload();
+
+		for (auto subMesh : subMeshes)
+		{
+			subMesh->Unload();
+		}
+
+		subMeshes.clear();
+	}
+
+	template<class T>
+	void BuildMaterialFromLoaderNode(Material** material, T* loaderMaterial, string additionalPath = "")
 	{
 		assert(loaderMaterial);
 
 		*material = new Material(loaderMaterial, loaderMaterial->name);
 	}
 
-	void LoadFromFBX()
+	template<typename t_vertex>
+	void BindVertexAndIndexData(RenderData** _renderData, vector<t_vertex>& vertices, vector<uint>& indices)
 	{
-		FBXFile * file = new FBXFile();
+		assert(_renderData);
 
-		auto isLoaded = file->load(path.c_str());
-		if (!isLoaded)
-		{
-			assert(false && "ERROR: Failed to load FBX file!");
-			return;
-		}
+		*_renderData = new RenderData();
+		(*_renderData)->GenerateBuffers(RenderData::Buffers::ALL);
 
-		FBXMeshNode * mesh = file->getMeshByIndex(0);
-		assert(mesh && "Require at least one mesh in your FBX");
+		(*_renderData)->Bind();
 
-		shader->verticies = mesh->m_vertices;
-		shader->indicies = mesh->m_indices;
-		shader->BindVertexAndIndexData(&renderData);
+		glBufferData(GL_ARRAY_BUFFER,
+			vertices.size() * sizeof(float),
+			vertices.data(), GL_STATIC_DRAW);
 
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER,
+			indices.size() * sizeof(uint),
+			indices.data(), GL_STATIC_DRAW);
+
+		shader->EnableAndInitAttributes();
+
+		(*_renderData)->SetIndexCount(indices.size());
+
+		(*_renderData)->Unbind();
 	}
 
+	void Render(Camera& camera, Transform& lightTransform, Transform& transform, bool bindShaderUnifroms)
+	{
+		if (!isInitialized)
+			return;
+
+		if (bindShaderUnifroms)
+		{
+			shader->UpdateUniforms(camera, lightTransform, transform);
+		}
+	}
+
+	
+	virtual void Update(float deltaTime)
+	{
+	}
 };

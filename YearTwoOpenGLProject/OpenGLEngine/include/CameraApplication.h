@@ -5,10 +5,12 @@
 class CameraApplication :
 	public Application
 {
-private:
+protected:
 	FlyCamera * flyCamera;
 
+private:
 	float prevTime;
+
 public:
 	float deltaTime;
 

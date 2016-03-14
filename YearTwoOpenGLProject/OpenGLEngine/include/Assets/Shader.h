@@ -7,6 +7,7 @@
 #include <assert.h>
 #include <sstream>
 #include <unordered_map>
+#include <functional>
 
 #include "dynamic_enum\DynamicEnum.h"
 
@@ -16,7 +17,6 @@
 #include "TextAsset.h"
 #include "merge_structs\Merger.h"
 
-template <typename vertex_data_type>
 class Shader :
         public TextAsset
 {
@@ -24,27 +24,52 @@ private:
 	int currentOffset;
 
 	bool isInitializingAttributes;
+
+	uint TSize;
+
+	void SetUniform(string name, uint value)
+	{
+		glUniform1ui(GetUniformLocation(name), value);
+	}
+
+
+	void SetUniform(string name, int value)
+	{
+		glUniform1i(GetUniformLocation(name), value);
+	}
+
+
+	void SetUniform(string name, float value)
+	{
+		glUniform1f(GetUniformLocation(name), value);
+	}
+
+
+	void SetUniform(string name, glm::mat4& value, int count = 1)
+	{
+		glUniformMatrix4fv(GetUniformLocation(name), count, GL_FALSE, glm::value_ptr(value));
+	}
+
+
+	void SetUniform(string name, glm::vec3& value, int count = 1)
+	{
+		glUniform3fv(GetUniformLocation(name), count, glm::value_ptr(value));
+	}
+
+
+	void SetUniform(string name, glm::vec4& value, int count=1)
+	{
+		glUniform4fv(GetUniformLocation(name), count, glm::value_ptr(value));
+	}
 public:
     int shaderID;
 
-	typedef vertex_data_type vertex_type;
 	DynamicEnum attributes;
 	DynamicEnum uniforms;
-
-	typedef vector<vertex_data_type> vertex_array_type;
-	typedef vector<uint> index_array_type;
-
-	vertex_array_type verticies;
-	index_array_type indicies;
-
     
-	Shader(string _path, 
-		vertex_array_type  _verticies = vertex_array_type(), 
-		index_array_type _indicies = index_array_type())
-		: TextAsset(_path),
-			shaderID(-1),
-			verticies(_verticies),
-			indicies(_indicies)
+	Shader(string _path)
+		: TextAsset("shaders/" + _path),
+			shaderID(-1)
     {
         
     }
@@ -52,61 +77,65 @@ public:
 	virtual void InitializeUniforms() = 0;
 	virtual void InitializeAttributes() = 0;
 
+	//template<class T>
+	//vector<float> ToFloatArray(vector<T>& input)
+	//{
+	//	TSize = sizeof(T);
 
-	void BindVertexAndIndexData(RenderData** renderData)
-	{		
-		assert(renderData);
+	//	verticies.assign((float*)input.data(), (float*)input.data() + (input.size() * sizeof(T)) / sizeof(float));
+	//}
 
-		*renderData = new RenderData();
-		(*renderData)->GenerateBuffers(RenderData::Buffers::ALL);
 
-		(*renderData)->Bind();
-
-		glBufferData(GL_ARRAY_BUFFER,
-			verticies.size() * sizeof(vertex_data_type),
-			verticies.data(), GL_STATIC_DRAW);
-
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER,
-			indicies.size() * sizeof(uint),
-			indicies.data(), GL_STATIC_DRAW);
-
-		EnableAttributes();
-		InitializeAttributes();
-
-		(*renderData)->SetIndexCount(indicies.size());
-
-		(*renderData)->Unbind();
-
+	void PrepareUniforms(vector<string> names)
+	{
+		for (auto& name : names)
+		{
+			PrepareUniform(name);
+		}
 	}
 
 
-	//(void*)(offsetof(FBXVertex, normal))
+	void EnableAndInitAttributes()
+	{
+		EnableAttributes();
+		InitializeAttributes();
+	}
+
 	template <typename type>
-	void SetAttribute(string name, type value)
+	void SetAttribute(string name, GL::Primitive primitive = GL::Primitive::Float)
 	{
 		if (!isInitializingAttributes)
-			throw std::bad_function_call("Cannot set attribute until initializing attributes");
-
+			throw std::exception("Cannot set attribute until initializing attributes");
+		
+		if (primitive != GL::Primitive::Float)
+		{
+			throw std::invalid_argument("Attribute type unsupported, floats are the only supported primitive");
+		}
+		
 		if (attributes.Find(name) == -1)
 		{
 			attributes.Add(name);
 		}
-
-		if (NAME(type) == NAME(float))
-		{
-			glVertexAttribPointer(attributes.Get(name), sizeof(type), GL_FLOAT, GL_FALSE, sizeof(vertex_data_type), (void*)(currentOffset));
-		}
-		else
-		{
-			throw std::invalid_argument("Attribute type unsupported");
-		}
+		
+		glVertexAttribPointer(attributes.Get(name), sizeof(type) / (GLenum)GL::SizeOf(primitive), (GLenum)primitive, GL_FALSE, TSize, (void*)(currentOffset));
 
 		currentOffset += sizeof(type);
 	}
-	
-    template <typename type>
-    void SetUniform(string name, type value)
-    {
+
+	void PrepareUniform(string name)
+	{
+		if (uniforms.Find(name) == -1)
+		{
+			uniforms.Add(name);
+		}
+
+		GetUniformLocation(name);
+	}
+
+	// Eventually will support struct uniforms through magical hackery + templating (hence templating)
+	template <typename type>
+	void SetUniform(string name, type value)
+	{
 		if (uniforms.Find(name) == -1)
 		{
 			uniforms.Add(name);
@@ -114,40 +143,55 @@ public:
 
 		auto wasBound = BindIfNeeded();
 
-        string typeName = NAME(type);
-        
-        if (typeName == NAME(uint))
-        {
-            glUniform1ui(GetUniformLocation(name), value);
-        }
-        else if (typeName == NAME(int))
-        {
-            glUniform1i(GetUniformLocation(name), value);
-        }
-        else if (typeName == NAME(float))
-        {
-            glUniform1f(GetUniformLocation(name), value);
-        }
-        else if (typeName == NAME(glm::mat4))
-        {
-            glUniformMatrix4fv(GetUniformLocation(name), 1, GL_FALSE, glm::value_ptr(value));
-        }
-        else if (typeName == NAME(glm::vec3))
-        {
-            glUniform3fv(GetUniformLocation(name), 1, glm::value_ptr(value));
-        }
-        else if (typeName == NAME(glm::vec4))
-        {
-            glUniformMatrix4fv(GetUniformLocation(name), 1, GL_FALSE, glm::value_ptr(value));
-        }
+		//      string typeName = NAME(type);        
+		//		auto isUInt =	(typeName == NAME(uint));
+		//		auto isInt =	(typeName == NAME(int));
+		//		auto isFloat =	(typeName == NAME(float));
+		//		auto isMat4 =	(typeName == NAME(glm::mat4));
+		//		auto isVec3 =	(typeName == NAME(glm::vec3));
+		//		auto isVec4 =	(typeName == NAME(glm::vec4));
+		//
+		SetUniform(name, value);
 
 		UnbindIfNeeded(wasBound);
-    }
+	}
 
-	void Load()
+	// Eventually will support struct uniforms through magical hackery + templating (hence templating)
+	template <typename type>
+	void SetArrayUniform(string name, type * valueArr, int count)
+	{
+		if (uniforms.Find(name) == -1)
+		{
+			uniforms.Add(name);
+		}
+
+		auto wasBound = BindIfNeeded();
+
+		//      string typeName = NAME(type);        
+		//		auto isUInt =	(typeName == NAME(uint));
+		//		auto isInt =	(typeName == NAME(int));
+		//		auto isFloat =	(typeName == NAME(float));
+		//		auto isMat4 =	(typeName == NAME(glm::mat4));
+		//		auto isVec3 =	(typeName == NAME(glm::vec3));
+		//		auto isVec4 =	(typeName == NAME(glm::vec4));
+		//
+		SetUniform(name, *value, count);
+
+		UnbindIfNeeded(wasBound);
+	}
+
+
+	void Load() override
 	{
 		LoadShaderProgramFromFile();
 	}
+
+
+	void Unload() override
+	{
+
+	}
+
 
     void LoadShaderProgramFromFile()
     {
@@ -173,17 +217,19 @@ public:
 
             if (fileToLoad == "vert")
             {
-                vertShaderID = LoadShader(GL_VERTEX_SHADER, fileToLoadPath);
+                vertShaderID = Load(GL_VERTEX_SHADER, fileToLoadPath);
             }
             else if (fileToLoad == "frag")
             {
-                fragShaderID = LoadShader(GL_VERTEX_SHADER, fileToLoadPath);
+                fragShaderID = Load(GL_VERTEX_SHADER, fileToLoadPath);
             }
         }
 
         shaderID = glCreateProgram();
         glAttachShader((GLuint)shaderID, (GLuint)fragShaderID);
         glAttachShader((GLuint)shaderID, (GLuint)vertShaderID);
+
+		SetupAttributeBindings();
 
         glLinkProgram(shaderID);
 
@@ -192,8 +238,9 @@ public:
         glDeleteShader(fragShaderID);
         glDeleteShader(fragShaderID);
 
-
+		BindIfNeeded();
         InitializeUniforms();
+		UnbindIfNeeded();
     }
 
 
@@ -216,7 +263,7 @@ public:
     }
 
 
-    int LoadShader(GLenum eType, string& filePath)
+    int Load(GLenum eType, string& filePath)
     {
         uint glslShaderID = glCreateShader(eType);
 
@@ -257,7 +304,7 @@ public:
 	{
 		for (uint index = 0; index < attributes.Size(); index++)
 		{
-			glBindAttribLocation(shaderID, index, attributes.Get(index));
+			glBindAttribLocation(shaderID, index, attributes.Get(index).c_str());
 		}
 	}
     

@@ -1,6 +1,12 @@
 #include <iostream>
 #include "Cameras/Camera.h"
 
+
+glm::vec3 Camera::GetPosition() const
+{
+	return glm::vec3(worldTransform[0]);
+}
+
 void Camera::UpdateProjectionViewTransform()
 {
 	projectionViewTransform = projectionTransform * viewTransform;

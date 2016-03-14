@@ -46,13 +46,6 @@ public:
 	
 	~Material()
 	{
-		for (int i = 0; i < TextureSlot::NumSlots; i++)
-		{
-			if (textures[i])
-			{
-				textures[i]->Unload();
-			}
-		}
 	}
 
 
@@ -63,10 +56,17 @@ public:
 
 	void Unload() override
 	{
+		for (int i = 0; i < TextureSlot::NumSlots; i++)
+		{
+			if (textures[i])
+			{
+				textures[i]->Unload();
+			}
+		}
 	}
 
-
-	void InitializeFromLoaderMaterial(FBXMaterial* material, std::string additionalPath="")
+	template<class T>
+	void InitializeFromLoaderMaterial(T* material, std::string additionalPath="")
 	{
 		LoadIfExists(TextureSlot::DiffuseTexture, material, TextureSlot::DiffuseTexture, additionalPath);
 		LoadIfExists(TextureSlot::AmbientTexture, material, TextureSlot::AmbientTexture, additionalPath);
@@ -96,6 +96,15 @@ public:
 		if (rawMaterial->textures[textureType])
 		{
 			textures[slot] = new Texture(additionalPath + rawMaterial->textures[textureType]->path);
+			textures[slot]->SetTextureSlot(slot);
+		}
+	}
+
+	void LoadIfExists(TextureSlot slot, DynamicEnum * texturePaths, uint textureType)
+	{
+		if (texturePaths->Has(textureType))
+		{
+			textures[slot] = new Texture(texturePaths->Get(textureType));
 			textures[slot]->SetTextureSlot(slot);
 		}
 	}

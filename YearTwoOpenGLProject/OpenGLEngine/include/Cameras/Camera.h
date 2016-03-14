@@ -25,8 +25,10 @@ public:
 	void SetRotation(glm::vec3 axis, float speed);
 	
 	glm::mat4& GetWorldTransform();
-			 
+
 	glm::mat4& GetView();
+
+	glm::vec3 GetPosition() const;
 			 
 	glm::mat4& GetProjection();
 			 
