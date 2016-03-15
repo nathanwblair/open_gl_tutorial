@@ -90,31 +90,34 @@ class GridApplication
 {
 private:
 	uint programID;
-	Grid * grid;
+	GridMesh * grid;
 
 	FBXMesh * mesh;
-	GridMesh * noise;
 
 public:
+	virtual bool Startup()
+	{
+		//mesh = new FBXMesh("models/soulspear/soulspear.fbx");
+
+		grid = new GridMesh("textures/cliff.tga");
+
+		grid->Load();
+		//mesh->Load();
+
+		return CameraApplication::Startup();
+	}
+
 	void Draw()
 	{
-		mesh = new FBXMesh("test.fbx");
-
-		noise = new GridMesh("test.texture");
-
-		noise->Load();
-		mesh->Load();
+		auto lightTransform = Transform();
+		grid->Render(*flyCamera, lightTransform, lightTransform, true);
 
 	}
 
 	bool Update()
 	{
-		noise->Update(deltaTime);
-		mesh->Update(deltaTime);
-
-		auto lightTransform = Transform();
-
-		noise->Render(*flyCamera, lightTransform, lightTransform, true);
+		grid->Update(deltaTime);
+		//mesh->Update(deltaTime);
 
 		return CameraApplication::Update();
 	}

@@ -9,7 +9,7 @@ class MeshShader
 	: public Shader
 {
 public:
-	MeshShader(string _path = "lighting.shader")
+	MeshShader(string _path = "default.shader")
 		: Shader(_path)
 	{
 	}
@@ -66,14 +66,16 @@ public:
 	void InitializeAttributes() override
 	{
 		SetAttribute<glm::vec4>("position");
-		SetAttribute<glm::vec4>("colour");
-		SetAttribute<glm::vec4>("normal");
-		SetAttribute<glm::vec4>("tangent");
-		SetAttribute<glm::vec4>("binormal");
-		SetAttribute<glm::vec4>("indices");
-		SetAttribute<glm::vec4>("weights");
-		SetAttribute<glm::vec2>("texCoord1");
-		SetAttribute<glm::vec2>("texCoord2");
+		SetAttribute<glm::vec2>("texCoord");
+		//SetAttribute<glm::vec4>("position");
+		//SetAttribute<glm::vec4>("colour");
+		//SetAttribute<glm::vec4>("normal");
+		//SetAttribute<glm::vec4>("tangent");
+		//SetAttribute<glm::vec4>("binormal");
+		//SetAttribute<glm::vec4>("indices");
+		//SetAttribute<glm::vec4>("weights");
+		//SetAttribute<glm::vec2>("texCoord1");
+		//SetAttribute<glm::vec2>("texCoord2");
 	}
 };
 

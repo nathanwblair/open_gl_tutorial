@@ -15,7 +15,9 @@
 #include "Cameras\Camera.h"
 #include "MathTypes\BoundingSphere.h"
 
-class Mesh 
+#include "dynamic_enum\DynamicEnum.h"
+
+class Mesh
 	: public Asset
 {
 private:
@@ -23,7 +25,7 @@ private:
 
 public:
 	BoundingSphere boundingSphere;
-    std::vector<Mesh*> subMeshes;
+	std::vector<Mesh*> subMeshes;
 	Material * material;
 
 	MeshShader * shader;
@@ -31,7 +33,7 @@ public:
 
 	RenderData * renderData;
 
-	Mesh(string path="")
+	Mesh(string path = "")
 		: Asset(path),
 		renderData(nullptr),
 		shader(nullptr),
@@ -44,10 +46,20 @@ public:
 		}
 	}
 
+	virtual void Load()
+	{
+		isInitialized = true;
+	}
+
 
 	void SetShader(MeshShader * _shader)
 	{
 		shader = _shader;
+
+		for (auto subMesh : subMeshes)
+		{
+			subMesh->SetShader(_shader);
+		}
 	}
 
 
@@ -65,8 +77,12 @@ public:
 		subMeshes.clear();
 	}
 
-	template<class T>
-	void BuildMaterialFromLoaderNode(Material** material, T* loaderMaterial, string additionalPath = "")
+	void BuildMaterialFromLoaderNode(Material** material, DynamicEnum loaderMaterial, string additionalPath = "")
+	{
+		*material = new Material(loaderMaterial, "");
+	}
+
+	void BuildMaterialFromLoaderNode(Material** material, FBXMaterial* loaderMaterial, string additionalPath = "")
 	{
 		assert(loaderMaterial);
 
@@ -84,7 +100,7 @@ public:
 		(*_renderData)->Bind();
 
 		glBufferData(GL_ARRAY_BUFFER,
-			vertices.size() * sizeof(float),
+			vertices.size() * sizeof(t_vertex),
 			vertices.data(), GL_STATIC_DRAW);
 
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER,
@@ -107,10 +123,41 @@ public:
 		{
 			shader->UpdateUniforms(camera, lightTransform, transform);
 		}
+
+		SafeBind();
+		renderData->Render();
+		SafeUnbind();
+
+		for (uint i = 0; i < subMeshes.size(); ++i)
+		{
+			Mesh* subMesh = subMeshes[i];
+			subMesh->Render(camera, lightTransform, transform, false);
+		}
 	}
 
 	
 	virtual void Update(float deltaTime)
 	{
+
+	}	
+	
+	void Mesh::Bind()
+	{
+		if (shader)
+			shader->Bind();
+		if (material)
+			material->Bind();
+
+		renderData->Bind();
+	}
+
+	void Mesh::Unbind()
+	{
+		if (shader)		
+			shader->Unbind();
+		if (material)	
+			material->Unbind();
+
+		renderData->Unbind();
 	}
 };

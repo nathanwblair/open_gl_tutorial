@@ -61,7 +61,7 @@ private:
 
 	void LoadWithSTBImage()
 	{
-		auto data = stbi_load(path.c_str(), 
+		auto data = stbi_load("C:/Users/nathaniel.blair/Documents/opengl/open_gl_tutorial/YearTwoOpenGLProject/data/models/soulspear/soulspear_diffuse.tga", 
 			&imageWidth, 
 			&imageHeight, 
 			&textureFormat, 

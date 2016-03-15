@@ -27,37 +27,37 @@ private:
 
 	uint TSize;
 
-	void SetUniform(string name, uint value)
+	void BaseSetUniform(string name, uint value)
 	{
 		glUniform1ui(GetUniformLocation(name), value);
 	}
 
 
-	void SetUniform(string name, int value)
+	void BaseSetUniform(string name, int value)
 	{
 		glUniform1i(GetUniformLocation(name), value);
 	}
 
 
-	void SetUniform(string name, float value)
+	void BaseSetUniform(string name, float value)
 	{
 		glUniform1f(GetUniformLocation(name), value);
 	}
 
 
-	void SetUniform(string name, glm::mat4& value, int count = 1)
+	void BaseSetUniform(string name, glm::mat4& value, int count = 1)
 	{
 		glUniformMatrix4fv(GetUniformLocation(name), count, GL_FALSE, glm::value_ptr(value));
 	}
 
 
-	void SetUniform(string name, glm::vec3& value, int count = 1)
+	void BaseSetUniform(string name, glm::vec3& value, int count = 1)
 	{
 		glUniform3fv(GetUniformLocation(name), count, glm::value_ptr(value));
 	}
 
 
-	void SetUniform(string name, glm::vec4& value, int count=1)
+	void BaseSetUniform(string name, glm::vec4& value, int count=1)
 	{
 		glUniform4fv(GetUniformLocation(name), count, glm::value_ptr(value));
 	}
@@ -97,7 +97,7 @@ public:
 
 	void EnableAndInitAttributes()
 	{
-		EnableAttributes();
+		//EnableAttributes();
 		InitializeAttributes();
 	}
 
@@ -116,6 +116,8 @@ public:
 		{
 			attributes.Add(name);
 		}
+
+		glEnableVertexAttribArray(attributes.Get(name));
 		
 		glVertexAttribPointer(attributes.Get(name), sizeof(type) / (GLenum)GL::SizeOf(primitive), (GLenum)primitive, GL_FALSE, TSize, (void*)(currentOffset));
 
@@ -124,12 +126,14 @@ public:
 
 	void PrepareUniform(string name)
 	{
+		SafeBind();
 		if (uniforms.Find(name) == -1)
 		{
 			uniforms.Add(name);
 		}
 
 		GetUniformLocation(name);
+		SafeUnbind();
 	}
 
 	// Eventually will support struct uniforms through magical hackery + templating (hence templating)
@@ -151,7 +155,7 @@ public:
 		//		auto isVec3 =	(typeName == NAME(glm::vec3));
 		//		auto isVec4 =	(typeName == NAME(glm::vec4));
 		//
-		SetUniform(name, value);
+		BaseSetUniform(name, value);
 
 		UnbindIfNeeded(wasBound);
 	}
@@ -175,7 +179,7 @@ public:
 		//		auto isVec3 =	(typeName == NAME(glm::vec3));
 		//		auto isVec4 =	(typeName == NAME(glm::vec4));
 		//
-		SetUniform(name, *value, count);
+		BaseSetUniform(name, *valueArr, count);
 
 		UnbindIfNeeded(wasBound);
 	}

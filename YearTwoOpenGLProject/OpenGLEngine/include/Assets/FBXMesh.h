@@ -19,6 +19,8 @@ public:
 
 	void Load() override
 	{
+		SetShader(new MeshShader());
+
 		auto indexFileExtension = path.find_last_of(".") + 1;
 
 		assert(indexFileExtension != 0 && "Need to include file extension in path");
@@ -33,6 +35,8 @@ public:
 		{
 			throw std::exception("Invalid file type");
 		}
+
+		Mesh::Load();
 	}
 
 
@@ -44,12 +48,14 @@ public:
 
 	void LoadFromFBX()
 	{
-		auto isLoaded = fbxFile.load(path.c_str());
+		auto isLoaded = fbxFile.load("C:/Users/nathaniel.blair/Documents/opengl/open_gl_tutorial/YearTwoOpenGLProject/data/models/soulspear/soulspear.fbx");//path.c_str());
 		if (!isLoaded)
 		{
 			assert(false && "ERROR: Failed to load FBX file!");
 			return;
 		}
+
+		return;
 
 		FBXMeshNode * meshNode = fbxFile.getMeshByIndex(0);
 		assert(meshNode && "At least one mesh in your FBX is required");

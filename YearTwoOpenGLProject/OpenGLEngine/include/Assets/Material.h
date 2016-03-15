@@ -15,7 +15,9 @@ class Material
 	: public Asset
 {
 private:
+	bool isFBXMaterial;
 	FBXMaterial * material;
+	DynamicEnum enumMaterial;
 public:
 	enum TextureSlot
 	{
@@ -32,12 +34,23 @@ public:
 	};
 
 	Texture * textures[TextureSlot::NumSlots];
-	
+
 
 	Material(FBXMaterial* _material, string path)
 		: Asset(path),
-			material(_material)
+		material(_material)
 	{
+		isFBXMaterial = true;
+		auto sizeOfTextures = sizeof(Texture*) * TextureSlot::NumSlots;
+
+		memset(textures, 0, sizeOfTextures);
+	}
+
+	Material(DynamicEnum _material, string path)
+		: Asset(path),
+		enumMaterial(_material)
+	{
+		isFBXMaterial = false;
 		auto sizeOfTextures = sizeof(Texture*) * TextureSlot::NumSlots;
 
 		memset(textures, 0, sizeOfTextures);
@@ -51,7 +64,10 @@ public:
 
 	void Load() override
 	{
-		InitializeFromLoaderMaterial(material);
+		if (isFBXMaterial)
+			InitializeFromLoaderMaterial(material);
+		else
+			InitializeFromLoaderMaterial(&enumMaterial);
 	}
 
 	void Unload() override
@@ -100,11 +116,11 @@ public:
 		}
 	}
 
-	void LoadIfExists(TextureSlot slot, DynamicEnum * texturePaths, uint textureType)
+	void LoadIfExists(TextureSlot slot, DynamicEnum * texturePaths, uint textureType, string additionalPath)
 	{
 		if (texturePaths->Has(textureType))
 		{
-			textures[slot] = new Texture(texturePaths->Get(textureType));
+			textures[slot] = new Texture(additionalPath + texturePaths->Get(textureType));
 			textures[slot]->SetTextureSlot(slot);
 		}
 	}

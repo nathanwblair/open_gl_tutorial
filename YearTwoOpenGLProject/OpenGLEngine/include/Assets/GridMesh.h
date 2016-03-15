@@ -30,12 +30,20 @@ public:
 		texturePath(_texturePath),
 		elapsedTime(0)
 	{
-
+		SetShader(new MeshShader("default.shader"));
 	}
 
 	void Load() override
 	{
 		GenerateGrid();
+
+		Mesh::Load();
+	}
+
+
+	void Unload() override
+	{
+		
 	}
 
 
@@ -82,7 +90,7 @@ public:
 				vertices[index].textureCoordinate = texCoord;
 			}
 		}
-		AddNoise(vertices);
+		//AddNoise(vertices);
 
 		boundingSphere.Fit(points);
 
@@ -93,9 +101,9 @@ public:
 
 		uint index = 0;
 
-		for (uint row = 0; row < rows; row++)
+		for (uint row = 0; row < rows - 1; row++)
 		{
-			for (uint column = 0; column < columns; column++)
+			for (uint column = 0; column < columns - 1; column++)
 			{
 				auto currentIndex = row * columns + column;
 				auto nextRow = (row + 1) * columns + column;
@@ -120,14 +128,14 @@ public:
 		texturePaths.Add(texturePath);
 
 		BindVertexAndIndexData(&renderData, vertices, indices);
-		BuildMaterialFromLoaderNode(&material, &texturePaths);
+		BuildMaterialFromLoaderNode(&material, texturePaths);
 	}
 
 
 	void AddNoise(vector<PositionTexCoordVertex>& vertices)
 	{
 		uint numVerticies = rows * columns;
-		vector<float> heightMap = GeneratePerlinNoise();
+		vector<float> heightMap(numVerticies);
 
 		for (uint row = 0; row < rows; row++)
 		{
@@ -159,16 +167,10 @@ public:
 
 				value = glm::min(value, 1.0f);
 				value = glm::max(value, 0.0f);
+
+				heightMap[i * j] = value;
 			}
 		}
-	}
-
-
-	vector<float> GeneratePerlinNoise()
-	{
-		uint numVerticies = rows * columns;
-		vector<float> result;
-		glm::perlin(vec3(1));
 
 
 	}
