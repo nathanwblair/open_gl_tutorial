@@ -6,8 +6,9 @@
 #include "Assets/FBXMesh.h"
 
 #include "Assets\GridMesh.h"
-#include "imgui.h"
-#include "imgui_impl_glfw_gl3.h"
+
+//#include "imgui.h"
+//#include "imgui_impl_glfw_gl3.h"
 
 class Grid;
 
@@ -99,7 +100,7 @@ private:
 public:
 	virtual bool Startup()
 	{
-		ImGui_ImplGlfwGL3_Init(window, true);
+//		ImGui_ImplGlfwGL3_Init(window, true);
 		mesh = new FBXMesh("models/soulspear/soulspear.fbx");
 
 		grid = new GridMesh("textures/cliff.tga");
@@ -119,9 +120,9 @@ public:
 		if (mesh->boundingSphere.IsTouchingFrustumPlanes(mat4(1), vec3(0)))
 			mesh->Render(*flyCamera, lightTransform, lightTransform, true);
 
-		ImVec4 clear_color = ImColor(114, 144, 154);
+		//ImVec4 clear_color = ImColor(114, 144, 154);
 
-		ImGui_ImplGlfwGL3_NewFrame();
+		//ImGui_ImplGlfwGL3_NewFrame();
 
 		// Imgui test
 		{
