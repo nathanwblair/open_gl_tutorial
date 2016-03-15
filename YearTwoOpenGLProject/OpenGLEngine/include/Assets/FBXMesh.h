@@ -48,7 +48,7 @@ public:
 
 	void LoadFromFBX()
 	{
-		auto isLoaded = fbxFile.load("C:/Users/nathaniel.blair/Documents/opengl/open_gl_tutorial/YearTwoOpenGLProject/data/models/soulspear/soulspear.fbx");//path.c_str());
+		auto isLoaded = fbxFile.load("data/models/soulspear/soulspear.fbx");//path.c_str());
 		if (!isLoaded)
 		{
 			assert(false && "ERROR: Failed to load FBX file!");
@@ -62,6 +62,7 @@ public:
 
 		BindVertexAndIndexData(&renderData, meshNode->m_vertices, meshNode->m_indices);
 		BuildMaterialFromLoaderNode(&material, meshNode->m_materials[0]);
+
 
 		for (uint index = 1; index < fbxFile.getMeshCount(); ++index)
 		{

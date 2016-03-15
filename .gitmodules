@@ -16,3 +16,6 @@
 [submodule "YearTwoOpenGLProject/deps/utils"]
 	path = YearTwoOpenGLProject/deps/utils
 	url = https://github.com/nathanwblair/cpp-utils
+[submodule "YearTwoOpenGLProject/deps/imgui"]
+	path = YearTwoOpenGLProject/deps/imgui
+	url = https://github.com/ocornut/imgui/

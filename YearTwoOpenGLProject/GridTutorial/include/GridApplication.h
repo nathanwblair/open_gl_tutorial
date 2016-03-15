@@ -6,6 +6,8 @@
 #include "Assets/FBXMesh.h"
 
 #include "Assets\GridMesh.h"
+#include "imgui.h"
+#include "imgui_impl_glfw_gl3.h"
 
 class Grid;
 
@@ -97,12 +99,13 @@ private:
 public:
 	virtual bool Startup()
 	{
-		//mesh = new FBXMesh("models/soulspear/soulspear.fbx");
+		ImGui_ImplGlfwGL3_Init(window, true);
+		mesh = new FBXMesh("models/soulspear/soulspear.fbx");
 
 		grid = new GridMesh("textures/cliff.tga");
 
 		grid->Load();
-		//mesh->Load();
+		mesh->Load();
 
 		return CameraApplication::Startup();
 	}
@@ -110,14 +113,28 @@ public:
 	void Draw()
 	{
 		auto lightTransform = Transform();
-		grid->Render(*flyCamera, lightTransform, lightTransform, true);
+
+		if (grid->boundingSphere.IsTouchingFrustumPlanes(mat4(1), vec3(0)))
+			grid->Render(*flyCamera, lightTransform, lightTransform, true);
+		if (mesh->boundingSphere.IsTouchingFrustumPlanes(mat4(1), vec3(0)))
+			mesh->Render(*flyCamera, lightTransform, lightTransform, true);
+
+		ImVec4 clear_color = ImColor(114, 144, 154);
+
+		ImGui_ImplGlfwGL3_NewFrame();
+
+		// Imgui test
+		{
+			// static float f = 0.0f;
+			// ImGui::Text("Testing...");
+		}
 
 	}
 
 	bool Update()
 	{
 		grid->Update(deltaTime);
-		//mesh->Update(deltaTime);
+		mesh->Update(deltaTime);
 
 		return CameraApplication::Update();
 	}

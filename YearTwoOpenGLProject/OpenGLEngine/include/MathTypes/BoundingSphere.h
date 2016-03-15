@@ -76,8 +76,7 @@ public:
 
 		for (uint i = 0; i < 6; i++)
 		{
-			float length = glm::length(vec3(planes[i]));
-			planes[i] /= length;
+			planes[i] /= glm::length(vec3(planes[i]));
 		}
 
 		return planes;

@@ -29,6 +29,7 @@ include_directories(${CMAKE_SOURCE_DIR}/deps/glfw/include)
 include_directories(${CMAKE_SOURCE_DIR}/deps/glm)
 include_directories(${CMAKE_SOURCE_DIR}/deps/utils)
 include_directories(${CMAKE_SOURCE_DIR}/deps/mesh_loaders)
+include_directories(${CMAKE_SOURCE_DIR}/deps/imgui)
 include_directories(${CMAKE_SOURCE_DIR}/deps/stb)
 
 add_subdirectory(deps/Utils)

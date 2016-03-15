@@ -94,6 +94,13 @@ public:
 	{
 		assert(_renderData);
 
+		vector<vec3> points(vertices.size());
+
+		for (uint index = 0; index < vertices.size(); index++)
+		{
+			points[index] = vec3(vertices[index].position);
+		}
+
 		*_renderData = new RenderData();
 		(*_renderData)->GenerateBuffers(RenderData::Buffers::ALL);
 

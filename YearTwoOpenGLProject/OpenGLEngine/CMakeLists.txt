@@ -22,7 +22,8 @@ SET(SOURCES
         src/Gizmos.cpp
         src/Assets/Asset.cpp
         src/MathTypes/Quaternion.cpp
-        src/MathTypes/Transform.cpp)
+        src/MathTypes/Transform.cpp
+        src/imgui_impl_glfw_gl3.cpp)
 SET(HEADERS
         include/Utils.h
         include/Application.h
@@ -46,9 +47,12 @@ SET(HEADERS
         include/MathTypes/Quaternion.h
         include/MathTypes/Transform.h
         include/MathTypes/BoundingSphere.h
+        include/imgui_impl_glfw_gl3.h
 	)
 
 SET(EXTRA_SOURCES
+   	 ${CMAKE_SOURCE_DIR}/deps/imgui/imgui.cpp
+  	 ${CMAKE_SOURCE_DIR}/deps/imgui/imgui_draw.cpp
         )
 
 IF(FBX_FOUND)
