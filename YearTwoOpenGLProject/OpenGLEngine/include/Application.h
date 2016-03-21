@@ -21,92 +21,13 @@ public:
 	virtual bool Update() = 0;
 	virtual void Draw() = 0;
 
-	bool BaseStartup()
-	{
-		if (glfwInit() == false)
-			return false;
+	bool BaseStartup();
 
-		window = glfwCreateWindow(1280, 720,
-			"Computer Graphics",
-			nullptr, nullptr);
+	virtual bool BaseUpdate();
 
-		if (window == nullptr)
-		{
-			glfwTerminate();
-			return false;
-		}
+	virtual void BaseDraw();
 
-		glfwMakeContextCurrent(window);
+	void Shutdown();
 
-		if (ogl_LoadFunctions() == ogl_LOAD_FAILED)
-		{
-			glfwDestroyWindow(window);
-			glfwTerminate();
-			return false;
-		}
-
-		Gizmos::create();
-
-		glClearColor(0.25f, 0.25f, 0.25f, 1);
-
-		return Startup();
-	}
-
-
-	virtual bool BaseUpdate()
-	{
-		auto isEscapeKeyPressed = (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS);
-
-		auto canWindowClose = glfwWindowShouldClose(window);
-
-		if (isEscapeKeyPressed && canWindowClose)
-		{
-			return false;
-		}
-		else
-		{
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-			glEnable(GL_DEPTH_TEST); // enables the depth buffer
-
-			Gizmos::clear();
-			auto result = Update();
-			BaseDraw();
-
-			glfwSwapBuffers(window);
-			glfwPollEvents();
-
-			return result;
-		}
-	}
-
-	virtual void BaseDraw()
-	{
-		Draw();
-	}
-
-	void Shutdown()
-	{
-		Gizmos::destroy();
-
-		if (window)
-		{
-			glfwDestroyWindow(window);
-			window = nullptr;
-		}
-
-		glfwTerminate();
-	}
-
-	void Run()
-	{
-		if (!BaseStartup())
-		{
-			return;
-		}
-
-		while (BaseUpdate())
-		{
-			//Update
-		}
-	}
+	void Run();
 };

@@ -19,17 +19,7 @@ typedef unsigned char uchar;
 
 #define NAME(type) typeid(type).name()
 
-Application * GetApplication(Application * _application=nullptr)
-{
-	static Application * application = nullptr;
-
-	if (_application != nullptr)
-	{
-		application = _application;
-	}
-
-	return application;
-}
+Application * GetApplication(Application * _application=nullptr);
 
 struct GL
 {
@@ -44,34 +34,5 @@ struct GL
 		UByte = GL_UNSIGNED_BYTE
 	};
 
-	static uint SizeOf(Primitive primitiveType)
-	{
-		switch (primitiveType)
-		{
-		case GL::Primitive::Double:
-			return sizeof(double);
-			break;
-		case GL::Primitive::Float:
-			return sizeof(float);
-			break;
-		case GL::Primitive::Int:
-			return sizeof(int);
-			break;
-		case GL::Primitive::UInt:
-			return sizeof(uint);
-			break;
-		case GL::Primitive::Short:
-			return sizeof(short);
-			break;
-		case GL::Primitive::Byte:
-			return sizeof(char);
-			break;
-		case GL::Primitive::UByte:
-			return sizeof(uchar);
-			break;
-		default:
-			return 0;
-			break;
-		}
-	}
+	static uint SizeOf(Primitive primitiveType);
 };

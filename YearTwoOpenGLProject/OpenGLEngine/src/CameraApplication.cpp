@@ -1,7 +1,1 @@
 #include "CameraApplication.h"
-
-
-
-
-
-

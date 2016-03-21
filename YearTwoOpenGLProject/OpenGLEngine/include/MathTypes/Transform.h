@@ -20,7 +20,6 @@ public:
 	Quaternion rotation;
 	Transform * parent;
 
-	static Transform Identity;
    
 	Transform(vec3 _position = vec3(0), 
 				vec3 _scale = vec3(0), 

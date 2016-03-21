@@ -1,5 +1,6 @@
 #pragma once
 #include "Mesh.h"
+#include "MeshShader.h"
 
 #include "AnimatedMeshShader.h"
 
@@ -15,11 +16,18 @@ public:
 		: Mesh(path),
 		elapsedTime(0)
 	{
+		if (path != "")
+		{
+			Load();
+		}
+
+		isInitialized = true;
 	}
 
 	void Load() override
 	{
 		SetShader(new MeshShader());
+		shader->Init();
 
 		auto indexFileExtension = path.find_last_of(".") + 1;
 
@@ -35,8 +43,6 @@ public:
 		{
 			throw std::exception("Invalid file type");
 		}
-
-		Mesh::Load();
 	}
 
 
@@ -48,17 +54,15 @@ public:
 
 	void LoadFromFBX()
 	{
-		auto isLoaded = fbxFile.load("data/models/soulspear/soulspear.fbx");//path.c_str());
+		auto isLoaded = fbxFile.load(path.c_str());
 		if (!isLoaded)
 		{
-			assert(false && "ERROR: Failed to load FBX file!");
+			assert(isLoaded && "ERROR: Failed to load FBX file!");
 			return;
 		}
 
-		return;
-
 		FBXMeshNode * meshNode = fbxFile.getMeshByIndex(0);
-		assert(meshNode && "At least one mesh in your FBX is required");
+		assert(meshNode != nullptr && "At least one mesh in your FBX is required");
 
 		BindVertexAndIndexData(&renderData, meshNode->m_vertices, meshNode->m_indices);
 		BuildMaterialFromLoaderNode(&material, meshNode->m_materials[0]);
@@ -98,7 +102,7 @@ public:
 		// Just use the first skeleton and first animation.
 		FBXSkeleton* skeleton = skeletons[0];
 		const FBXAnimation* animation = animationMap.begin()->second;
-		assert(animation->totalFrames() > 0);
+		assert(animation->totalFrames() == 0);
 
 		// Get the position, scale, rotation values of the keyframes in the animation at m_elapsedTime.
 		// Interpolate between the two closest keyframes and set the local transform of animation nodes.

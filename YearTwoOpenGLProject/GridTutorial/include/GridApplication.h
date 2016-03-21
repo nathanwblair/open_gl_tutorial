@@ -46,7 +46,6 @@ void TestMergeStruct()
 	auto merger = Merge<MeshVertex, CableVertex>(MeshVertex(), CableVertex()).result;
 }
 
-
 void TestEnum()
 {
 	DynamicEnum dynamicEnum = DynamicEnum();
@@ -81,7 +80,6 @@ void TestEnum()
 	dynamicEnum.LocalGet("Texture", "Normal");
 }
 
-
 void TestRenderer()
 {
 
@@ -101,12 +99,9 @@ public:
 	virtual bool Startup()
 	{
 //		ImGui_ImplGlfwGL3_Init(window, true);
-		mesh = new FBXMesh("models/soulspear/soulspear.fbx");
+		mesh = new FBXMesh("soulspear.fbx");
 
-		grid = new GridMesh("textures/cliff.tga");
-
-		grid->Load();
-		mesh->Load();
+		//grid = new GridMesh("textures/cliff.tga");
 
 		return CameraApplication::Startup();
 	}
@@ -115,10 +110,10 @@ public:
 	{
 		auto lightTransform = Transform();
 
-		if (grid->boundingSphere.IsTouchingFrustumPlanes(mat4(1), vec3(0)))
-			grid->Render(*flyCamera, lightTransform, lightTransform, true);
-		if (mesh->boundingSphere.IsTouchingFrustumPlanes(mat4(1), vec3(0)))
-			mesh->Render(*flyCamera, lightTransform, lightTransform, true);
+		//if (grid->boundingSphere.IsTouchingFrustumPlanes(mat4(1), vec3(0)))
+		//	grid->Render(*flyCamera, lightTransform, lightTransform, true);
+		//if (mesh->boundingSphere.IsTouchingFrustumPlanes(mat4(1), vec3(0)))
+		mesh->Render(*flyCamera, lightTransform, lightTransform, true);
 
 		//ImVec4 clear_color = ImColor(114, 144, 154);
 
@@ -130,12 +125,13 @@ public:
 			// ImGui::Text("Testing...");
 		}
 
+		
 	}
 
 	bool Update()
 	{
-		grid->Update(deltaTime);
-		mesh->Update(deltaTime);
+		//grid->Update(deltaTime);
+		//mesh->Update(deltaTime);
 
 		return CameraApplication::Update();
 	}

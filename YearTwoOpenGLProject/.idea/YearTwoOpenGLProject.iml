@@ -6,14 +6,24 @@
       <sourceFolder url="file://$MODULE_DIR$/cmake/FindFBX.cmake" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/Application.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/Gizmos.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/CameraApplication.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/gl_core_4_4.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/imgui_impl_glfw_gl3.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/Cameras/Camera.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/Cameras/FlyCamera.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/gl_core_4_4.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/imgui_impl_glfw_gl3.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/Utils.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/CameraApplication.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/MathTypes/Quaternion.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/MathTypes/Transform.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/MathTypes/BoundingSphere.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/Assets/GridMesh.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/Assets/Asset.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/Assets/Mesh.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/Assets/TextAsset.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/Assets/Texture.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/Assets/Material.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/Assets/Shader.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/Assets/AnimatedMeshShader.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/src/Assets/MeshShader.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/include/Gizmos.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OpenGLEngine/include/Rendering/RenderData.h" isTestSource="false" />
@@ -42,13 +52,12 @@
       <sourceFolder url="file://$MODULE_DIR$/GridTutorial/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GridTutorial/include/GridApplication.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/deps/glfw/src/wgl_context.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/deps/glfw/src/glfw_config.h.in" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/deps/glfw/src/win32_tls.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/deps/glfw/src/glfw3.pc.in" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/deps/glfw/src/glfw3Config.cmake.in" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/deps/glfw/src/monitor.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/deps/glfw/src/internal.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/deps/glfw/src/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/deps/glfw/src/win32_tls.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/deps/glfw/src/init.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/deps/glfw/src/context.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/deps/glfw/src/window.c" isTestSource="false" />
@@ -60,6 +69,7 @@
       <sourceFolder url="file://$MODULE_DIR$/deps/glfw/src/win32_init.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/deps/glfw/src/win32_joystick.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/deps/glfw/src/win32_platform.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/deps/glfw/src/glfw_config.h.in" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/deps/glfw/src/wgl_context.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/deps/glfw/include/GLFW/glfw3native.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/deps/glfw/include/GLFW/glfw3.h" isTestSource="false" />
@@ -86,66 +96,21 @@
           <root url="file://C:/MinGW/lib/gcc/mingw32/4.8.1/include-fixed" />
           <root url="file://C:/MinGW/mingw32/include" />
           <root url="file://C:/MinGW/include" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include" />
-          <root url="file://$MODULE_DIR$/GridTutorial/include" />
-          <root url="file://$MODULE_DIR$/deps/glm" />
-          <root url="file://$MODULE_DIR$/deps/glfw/include" />
-          <root url="file://$MODULE_DIR$/deps/mesh_loaders" />
-          <root url="file://$MODULE_DIR$/deps/imgui" />
-          <root url="file://$MODULE_DIR$/deps/stb" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/aa2bf2aa/aa2bf2aa/MinSizeRel/deps/glfw/src" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/aa2bf2aa/aa2bf2aa/Debug/deps/glfw/src" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/aa2bf2aa/aa2bf2aa/Release/deps/glfw/src" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/aa2bf2aa/aa2bf2aa/RelWithDebInfo/deps/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/YearTwoOpenGLProject-aa2bf2aa/aa2bf2aa/MinSizeRel/deps/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/YearTwoOpenGLProject-aa2bf2aa/aa2bf2aa/Debug/deps/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/YearTwoOpenGLProject-aa2bf2aa/aa2bf2aa/Release/deps/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/YearTwoOpenGLProject-aa2bf2aa/aa2bf2aa/RelWithDebInfo/deps/glfw/src" />
         </CLASSES>
         <SOURCES>
           <root url="file://C:/MinGW/lib/gcc/mingw32/4.8.1/include" />
           <root url="file://C:/MinGW/lib/gcc/mingw32/4.8.1/include-fixed" />
           <root url="file://C:/MinGW/mingw32/include" />
           <root url="file://C:/MinGW/include" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include" />
-          <root url="file://$MODULE_DIR$/GridTutorial/include" />
-          <root url="file://$MODULE_DIR$/deps/glm" />
-          <root url="file://$MODULE_DIR$/deps/glfw/include" />
-          <root url="file://$MODULE_DIR$/deps/mesh_loaders" />
-          <root url="file://$MODULE_DIR$/deps/imgui" />
-          <root url="file://$MODULE_DIR$/deps/stb" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/aa2bf2aa/aa2bf2aa/MinSizeRel/deps/glfw/src" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/aa2bf2aa/aa2bf2aa/Debug/deps/glfw/src" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/aa2bf2aa/aa2bf2aa/Release/deps/glfw/src" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/aa2bf2aa/aa2bf2aa/RelWithDebInfo/deps/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/YearTwoOpenGLProject-aa2bf2aa/aa2bf2aa/MinSizeRel/deps/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/YearTwoOpenGLProject-aa2bf2aa/aa2bf2aa/Debug/deps/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/YearTwoOpenGLProject-aa2bf2aa/aa2bf2aa/Release/deps/glfw/src" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/YearTwoOpenGLProject-aa2bf2aa/aa2bf2aa/RelWithDebInfo/deps/glfw/src" />
         </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Gizmos.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Rendering/RenderData.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Utils.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/gl_core_4_4.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Application.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Cameras/Camera.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Cameras/FlyCamera.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/imgui_impl_glfw_gl3.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/CameraApplication.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/MathTypes/BoundingSphere.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/MathTypes/Transform.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/MathTypes/Quaternion.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Assets/Mesh.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Assets/Material.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Assets/AnimatedMeshShader.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Assets/Grid.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Assets/MeshShader.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Assets/Texture.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Assets/TextAsset.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Assets/FBXMesh.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Assets/Shader.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Assets/GridMesh.h" />
-          <root url="file://$MODULE_DIR$/OpenGLEngine/include/Assets/Asset.h" />
-          <root url="file://$MODULE_DIR$/GridTutorial/include/GridApplication.h" />
-          <root url="file://$MODULE_DIR$/deps/glfw/include/GLFW/glfw3native.h" />
-          <root url="file://$MODULE_DIR$/deps/glfw/include/GLFW/glfw3.h" />
-          <root url="file://$MODULE_DIR$/deps/imgui/imgui_draw.cpp" />
-          <root url="file://$MODULE_DIR$/deps/imgui/imgui.cpp" />
-          <root url="file://$MODULE_DIR$/deps/imgui/imgui.h" />
-        </excluded>
       </library>
     </orderEntry>
   </component>

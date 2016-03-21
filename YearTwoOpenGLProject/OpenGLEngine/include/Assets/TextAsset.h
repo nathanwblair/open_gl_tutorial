@@ -1,30 +1,12 @@
 #pragma once
-#include "Asset.h"
-
-#include <string>
-
-using std::string;
+#include "Assets/Asset.h"
+#include "Utils.h"
 
 class TextAsset
     : public Asset
 {
 public:
-    TextAsset(string _path)
-            : Asset(_path)
-    {
+	TextAsset(string _path);
 
-    }
-
-    string GetFile(string _path)
-    {
-        std::ifstream file;
-        file.open(_path);
-        assert(file.good() && "Unable to open text asset file");
-
-        std::stringstream ss;
-        ss << file.rdbuf();
-        file.close();
-
-        return ss.str();
-    }
+	string GetFile(string _path);
 };

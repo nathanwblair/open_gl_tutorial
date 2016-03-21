@@ -11,11 +11,11 @@
 #include "Assets/Material.h"
 #include "Assets/Asset.h"
 
-#include "MathTypes\Transform.h"
-#include "Cameras\Camera.h"
-#include "MathTypes\BoundingSphere.h"
+#include "MathTypes/Transform.h"
+#include "Cameras/Camera.h"
+#include "MathTypes/BoundingSphere.h"
 
-#include "dynamic_enum\DynamicEnum.h"
+#include "dynamic_enum/DynamicEnum.h"
 
 class Mesh
 	: public Asset
@@ -30,67 +30,25 @@ public:
 
 	MeshShader * shader;
 
-
 	RenderData * renderData;
 
-	Mesh(string path = "")
-		: Asset(path),
-		renderData(nullptr),
-		shader(nullptr),
-		material(nullptr),
-		isValidated(nullptr)
-	{
-		if (path != "")
-		{
-			Load();
-		}
-	}
+	Mesh(string path = "");
 
-	virtual void Load()
-	{
-		isInitialized = true;
-	}
+	virtual void Load() override = 0;
+	//{
+	//	isInitialized = true;
+	//}
 
+	void SetShader(MeshShader * _shader);
 
-	void SetShader(MeshShader * _shader)
-	{
-		shader = _shader;
+	void Unload();
 
-		for (auto subMesh : subMeshes)
-		{
-			subMesh->SetShader(_shader);
-		}
-	}
+	void BuildMaterialFromLoaderNode(Material** material, DynamicEnum loaderMaterial, string additionalPath = "");
 
+	void BuildMaterialFromLoaderNode(Material** material, FBXMaterial* loaderMaterial, string additionalPath = "");
 
-	void Unload() override
-	{
-		Unbind();
-
-		material->Unload();
-
-		for (auto subMesh : subMeshes)
-		{
-			subMesh->Unload();
-		}
-
-		subMeshes.clear();
-	}
-
-	void BuildMaterialFromLoaderNode(Material** material, DynamicEnum loaderMaterial, string additionalPath = "")
-	{
-		*material = new Material(loaderMaterial, "");
-	}
-
-	void BuildMaterialFromLoaderNode(Material** material, FBXMaterial* loaderMaterial, string additionalPath = "")
-	{
-		assert(loaderMaterial);
-
-		*material = new Material(loaderMaterial, loaderMaterial->name);
-	}
-
-	template<typename t_vertex>
-	void BindVertexAndIndexData(RenderData** _renderData, vector<t_vertex>& vertices, vector<uint>& indices)
+	template<typename vertex_t>
+	void BindVertexAndIndexData(RenderData** _renderData, vector<vertex_t>& vertices, vector<uint>& indices)
 	{
 		assert(_renderData);
 
@@ -107,7 +65,7 @@ public:
 		(*_renderData)->Bind();
 
 		glBufferData(GL_ARRAY_BUFFER,
-			vertices.size() * sizeof(t_vertex),
+			vertices.size() * sizeof(vertex_t),
 			vertices.data(), GL_STATIC_DRAW);
 
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER,
@@ -121,50 +79,11 @@ public:
 		(*_renderData)->Unbind();
 	}
 
-	void Render(Camera& camera, Transform& lightTransform, Transform& transform, bool bindShaderUnifroms)
-	{
-		if (!isInitialized)
-			return;
+	void Render(Camera& camera, Transform& lightTransform, Transform& transform, bool bindShaderUnifroms);
 
-		if (bindShaderUnifroms)
-		{
-			shader->UpdateUniforms(camera, lightTransform, transform);
-		}
+	virtual void Update(float deltaTime);
 
-		SafeBind();
-		renderData->Render();
-		SafeUnbind();
+	void Bind();
 
-		for (uint i = 0; i < subMeshes.size(); ++i)
-		{
-			Mesh* subMesh = subMeshes[i];
-			subMesh->Render(camera, lightTransform, transform, false);
-		}
-	}
-
-	
-	virtual void Update(float deltaTime)
-	{
-
-	}	
-	
-	void Mesh::Bind()
-	{
-		if (shader)
-			shader->Bind();
-		if (material)
-			material->Bind();
-
-		renderData->Bind();
-	}
-
-	void Mesh::Unbind()
-	{
-		if (shader)		
-			shader->Unbind();
-		if (material)	
-			material->Unbind();
-
-		renderData->Unbind();
-	}
+	void Unbind();
 };

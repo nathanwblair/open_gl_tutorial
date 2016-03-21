@@ -14,6 +14,7 @@ include_directories(include)
 
 # Gather additional source files/headers
 SET(SOURCES
+        src/Utils.cpp
         src/Application.cpp
         src/CameraApplication.cpp
         src/Cameras/Camera.cpp
@@ -21,8 +22,17 @@ SET(SOURCES
         src/gl_core_4_4.c
         src/Gizmos.cpp
         src/Assets/Asset.cpp
+        src/Assets/AnimatedMeshShader.cpp
+        src/Assets/GridMesh.cpp
+        src/Assets/Texture.cpp
+        src/Assets/MeshShader.cpp
+        src/Assets/Material.cpp
+        src/Assets/Shader.cpp
+        src/Assets/Mesh.cpp
+        src/Assets/TextAsset.cpp
         src/MathTypes/Quaternion.cpp
         src/MathTypes/Transform.cpp
+        src/MathTypes/BoundingSphere.cpp
         src/imgui_impl_glfw_gl3.cpp)
 SET(HEADERS
         include/Utils.h

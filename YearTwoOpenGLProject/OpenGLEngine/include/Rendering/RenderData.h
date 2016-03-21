@@ -19,9 +19,10 @@ private:
 
 public:
     RenderData()
-            : vao(0),
-              vbo(0),
-              ibo(0)
+        : vao(0),
+        vbo(0),
+        ibo(0),
+		uiIndexCount(0)
     {
     }
 
@@ -96,7 +97,7 @@ public:
             glDeleteVertexArrays(1, &vao);
         }
 
-        if (uiBuffers & Buffers::VAO && vao > 0)
+        if (uiBuffers & Buffers::VAO && vbo > 0)
         {
             glDeleteBuffers(1, &vbo);
         }

@@ -10,23 +10,17 @@ class AnimatedMeshShader
 	: public MeshShader
 {
 public:
-	AnimatedMeshShader(string _path = "skinning.shader")
-		: MeshShader(_path)
-	{
-	}
+	AnimatedMeshShader(string _path = "skinning.shader");
 
 
-	virtual void InitializeUniforms() override
-	{
-		MeshShader::InitializeUniforms();
+	//virtual void InitializeUniforms() override
+	//{
+	//	MeshShader::InitializeUniforms();
 
-		PrepareUniform("Bones");
-	}
+	//	PrepareUniform("Bones");
+	//}
 
 
-	void UpdateBones(glm::mat4 * bones, int numBones)
-	{
-		SetArrayUniform<glm::mat4>("Bones", bones, numBones);
-	}
+	void UpdateBones(glm::mat4 * bones, int numBones);
 };
 

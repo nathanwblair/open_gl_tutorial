@@ -6,73 +6,32 @@ using std::string;
 
 class Asset
 {
-protected:
+public:
 	string filePath;
 	bool isInitialized;
 	bool isBound;
 
-	virtual void Unbind()
-	{
+	virtual void Unbind();
 
-	}
-	virtual void Bind()
-	{
+	virtual void Bind();
 
-	}
-
-public:
     string path;
 
-	Asset(string _path) : path("data/" + _path), isInitialized(false), isBound(false)
-    {
-
-    }
+	Asset(string _path);
 
     virtual void Load() = 0;
 
     virtual void Unload() = 0;
 
-	bool BindIfNeeded()
-	{
-		if (!isBound)
-		{
-			SafeBind();
-			return true;
-		}
+	bool BindIfNeeded();
 
-		return false;
-	}
+	void UnbindIfNeeded(bool check);
 
-	void UnbindIfNeeded(bool check)
-	{
-		if (check)
-			SafeUnbind();
-	}
+	void UnbindIfNeeded();
 
-	void UnbindIfNeeded()
-	{
-		if (isBound)
-			SafeUnbind();
-	}
+	void SafeBind();
 
-	void SafeBind()
-	{
-		isBound = true;
+	void SafeUnbind();
 
-	}
-
-	void SafeUnbind()
-	{
-		isBound = false;
-	}
-
-    string GetDirectory()
-    {
-        auto lastSlash = path.find_last_of("/");
-
-        if (lastSlash == string::npos)
-            return path;
-
-        return path.substr(0, lastSlash + 1);
-    }
+	string GetDirectory();
 };
