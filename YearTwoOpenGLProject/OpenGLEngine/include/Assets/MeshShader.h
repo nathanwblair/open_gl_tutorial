@@ -11,12 +11,9 @@ class MeshShader
 public:
 	MeshShader(string _path="default.shader");
 
-
 	void InitializeUniforms() override;
 
-
 	void UpdateUniforms(Camera& camera, Transform& lightTransform, Transform& transform);
-
 
 	void InitializeAttributes();
 };

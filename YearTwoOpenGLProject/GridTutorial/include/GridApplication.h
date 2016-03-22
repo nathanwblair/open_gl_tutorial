@@ -10,9 +10,6 @@
 //#include "imgui.h"
 //#include "imgui_impl_glfw_gl3.h"
 
-class Grid;
-
-
 void TestPlanet()
 {
 	glm::vec4 yellow(255.0f, 255.0f, 0, 1);

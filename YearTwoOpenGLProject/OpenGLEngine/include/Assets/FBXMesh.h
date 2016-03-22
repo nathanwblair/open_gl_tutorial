@@ -27,7 +27,6 @@ public:
 	void Load() override
 	{
 		SetShader(new MeshShader());
-		shader->Init();
 
 		auto indexFileExtension = path.find_last_of(".") + 1;
 
@@ -43,6 +42,8 @@ public:
 		{
 			throw std::exception("Invalid file type");
 		}
+
+		shader->Init();
 	}
 
 

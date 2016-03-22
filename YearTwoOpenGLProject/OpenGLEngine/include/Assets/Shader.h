@@ -53,13 +53,13 @@ public:
 	virtual void InitializeUniforms() = 0;
 	virtual void InitializeAttributes() = 0;
 
-	//template<class T>
-	//vector<float> ToFloatArray(vector<T>& input)
-	//{
-	//	TSize = sizeof(T);
+	template<class T>
+	void SetVertexSize()
+	{
+		TSize = sizeof(T);
 
-	//	verticies.assign((float*)input.data(), (float*)input.data() + (input.size() * sizeof(T)) / sizeof(float));
-	//}
+		//verticies.assign((float*)input.data(), (float*)input.data() + (input.size() * sizeof(T)) / sizeof(float));
+	}
 
 	void PrepareUniforms(vector<string> names);
 
@@ -115,7 +115,12 @@ void Shader::SetAttribute(string name, GL::Primitive primitive) {
 
 	glEnableVertexAttribArray(attributes.Get(name));
 
-	glVertexAttribPointer(attributes.Get(name), sizeof(type) / (GLenum)GL::SizeOf(primitive), (GLenum)primitive, GL_FALSE, TSize, (void*)(currentOffset));
+	glVertexAttribPointer(attributes.Get(name), 
+		sizeof(type) / (GLenum)GL::SizeOf(primitive), 
+		(GLenum)primitive, 
+		GL_FALSE,
+		TSize, 
+		(void*)(currentOffset));
 
 	currentOffset += sizeof(type);
 }

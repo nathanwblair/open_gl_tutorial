@@ -34,11 +34,14 @@ void Asset::SafeBind()
 {
 	isBound = true;
 
+	Bind();
 }
 
 void Asset::SafeUnbind() 
 {
 	isBound = false;
+	
+	Unbind();
 }
 
 string Asset::GetDirectory() 

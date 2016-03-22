@@ -72,6 +72,8 @@ public:
 			indices.size() * sizeof(uint),
 			indices.data(), GL_STATIC_DRAW);
 
+		shader->SetVertexSize<vertex_t>();
+
 		shader->EnableAndInitAttributes();
 
 		(*_renderData)->SetIndexCount(indices.size());

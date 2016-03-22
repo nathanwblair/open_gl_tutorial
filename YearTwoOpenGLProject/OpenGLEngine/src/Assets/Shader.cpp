@@ -1,4 +1,5 @@
 #include "Assets/Shader.h"
+#include <iostream>
 
 void Shader::BaseSetUniform(string name, uint value) 
 {
@@ -40,7 +41,8 @@ void Shader::PrepareUniforms(vector<string> names)
 
 void Shader::EnableAndInitAttributes() 
 {
-	//EnableAttributes();
+	isInitializingAttributes = true;
+
 	InitializeAttributes();
 }
 
@@ -119,18 +121,45 @@ void Shader::LoadShaderProgramFromFile()
 	UnbindIfNeeded();
 }
 
+// Check whether a shader compile succeeded.
+// Logs to stderr and returns false if ti has failed.
+// From https://github.com/johnsietsma/RefEngine/blob/4fbfe5e01cd97d1522e8ec273a396e41e29d3b29/Engine/src/graphics/Program.cpp
+bool CheckCompileStatus(GLuint glslShaderID)
+{
+	GLint result = GL_FALSE;
+	int logLength = 0;
+	glGetShaderiv(glslShaderID, GL_COMPILE_STATUS, &result);
+
+	if (result != GL_TRUE) 
+	{
+		glGetShaderiv(glslShaderID, GL_INFO_LOG_LENGTH, &logLength);
+
+		auto logBuffer = new char[logLength];
+		glGetShaderInfoLog(glslShaderID, logLength, NULL, logBuffer);
+
+		std::cerr << "Compile Error: " << logBuffer << std::endl;
+
+		delete[] logBuffer;
+		return false;
+	}
+
+	return true;
+}
+
+
+
 void Shader::CheckForGLSLErrors() 
 {
-	auto success = GL_FALSE;
-	glGetProgramiv(shaderID, GL_INFO_LOG_LENGTH, &success);
+	auto success = 0;
+	glGetProgramiv((uint)shaderID, GL_LINK_STATUS, &success);
 
+	auto infoLogLength = 0;
 	if (success == GL_FALSE)
 	{
-		auto infoLogLength = 0;
-		glGetProgramiv(shaderID, GL_INFO_LOG_LENGTH, &infoLogLength);
+		glGetProgramiv((uint)shaderID, GL_INFO_LOG_LENGTH, &infoLogLength);
 
 		auto infoLog = new char[infoLogLength];
-		glGetProgramInfoLog(shaderID, infoLogLength, 0, infoLog);
+		glGetProgramInfoLog((uint)shaderID, infoLogLength, NULL, infoLog);
 
 		printf("Error: Failed to link shader program!\n");
 		printf("%s\n", infoLog);
@@ -151,6 +180,8 @@ int Shader::Load(GLenum eType, string& filePath)
 
 	glShaderSource(glslShaderID, 1, &pCode, 0);
 	glCompileShader(glslShaderID);
+
+	CheckCompileStatus(glslShaderID);
 
 	return glslShaderID;
 }
